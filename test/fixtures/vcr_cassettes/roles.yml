@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://directory.zaikio.test/api/v1/roles?lang=de
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"075f04ff8f20ed6d4581a12f28f2d4f9"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - f7b32221-1907-4486-9b45-eba6a70169ec
+      X-Runtime:
+      - '0.194255'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Fri, 03 Apr 2020 10:32:51 GMT
+      Content-Length:
+      - '387'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOiJvd25lciIsIm5hbWUiOiJFaWdlbnTDvG1lciJ9LHsiaWQiOiJhZG1pbiIsIm5hbWUiOiJBZG1pbmlzdHJhdG9yIn0seyJpZCI6Im1lbWJlciIsIm5hbWUiOiJNaXRnbGllZCJ9LHsiaWQiOiJwdXJjaGFzZXIiLCJuYW1lIjoiRWlua2F1ZiJ9LHsiaWQiOiJwcm9kdWN0aW9uX3BsYW5uZXIiLCJuYW1lIjoiUHJvZHVrdGlvbnNwbGFuZXIifSx7ImlkIjoiY3VzdG9tZXJfc2VydmljZV9yZXByZXNlbnRhdGl2ZSIsIm5hbWUiOiJLdW5kZW5iZXJhdGVyIn0seyJpZCI6InNhbGVzX3JlcHJlc2VudGF0aXZlIiwibmFtZSI6IlZlcnRyaWViIn0seyJpZCI6ImRlc2lnbmVyIiwibmFtZSI6IkRlc2lnbmVyIn0seyJpZCI6ImRldmVsb3BlciIsIm5hbWUiOiJFbnR3aWNrbGVyIn1d
+    http_version: null
+  recorded_at: Fri, 03 Apr 2020 10:32:51 GMT
+recorded_with: VCR 5.1.0

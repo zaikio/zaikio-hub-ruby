@@ -15,8 +15,10 @@ group :development, :test do
 
   gem "rake"
 
-  gem "webmock"
-
   # Mocking
   gem "mocha"
+
+  # request recording
+  gem "vcr"
+  gem "webmock"
 end

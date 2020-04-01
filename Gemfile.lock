@@ -2,10 +2,15 @@ PATH
   remote: .
   specs:
     zaikio-directory (0.0.0)
+      jwt (~> 2.2.1)
+      multi_json (~> 1.14.1)
+      spyke (~> 5.3.4)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    activemodel (6.0.2.2)
+      activesupport (= 6.0.2.2)
     activesupport (6.0.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -19,12 +24,19 @@ GEM
     concurrent-ruby (1.1.6)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (1.0.0)
+      faraday (~> 1.0)
     hashdiff (1.0.1)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
+    jwt (2.2.1)
     minitest (5.14.0)
     mocha (1.11.2)
+    multi_json (1.14.1)
+    multipart-post (2.1.1)
     parallel (1.19.1)
     parser (2.7.0.5)
       ast (~> 2.4.0)
@@ -49,10 +61,17 @@ GEM
       rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
+    spyke (5.3.4)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      addressable (>= 2.5.2)
+      faraday (>= 0.9.0, < 2.0)
+      faraday_middleware (>= 0.9.1, < 2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
+    vcr (5.1.0)
     webmock (3.8.3)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -70,6 +89,7 @@ DEPENDENCIES
   rubocop
   rubocop-performance
   rubocop-rails
+  vcr
   webmock
   zaikio-directory!
 
