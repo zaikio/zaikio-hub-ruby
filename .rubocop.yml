@@ -12,6 +12,10 @@ require:
 Metrics/LineLength:
   Max: 100
 
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*.rb
+
 Style/ClassAndModuleChildren:
   Exclude:
     - test/**/*.rb
