@@ -63,6 +63,7 @@ module Zaikio
         subjects = payload["sub"].split(">")
 
         OpenStruct.new(
+          audience: payload["aud"].first,
           on_behalf_of_id: subjects.first.split("/").last,
           subject_id: subjects.last.split("/").last,
           subject_type: subjects.last.split("/").first

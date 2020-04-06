@@ -45,6 +45,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     host = "http://directory.zaikio.test/api/v1"
     VCR.use_cassette("current_person") do
       Zaikio::Directory.with_token(token) do
+        assert_equal "Person/383663bc-149a-5b76-b50d-ee039046c12e",
+                     Zaikio::Directory.current_token_data.audience
         person = Zaikio::Directory::CurrentPerson.new
         person.fetch
         assert_equal "Frank Gallikanokus", person.full_name
