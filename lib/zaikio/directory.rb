@@ -40,7 +40,7 @@ module Zaikio
       end
 
       def current_token_data
-        return {} unless AuthorizationMiddleware.token
+        return unless AuthorizationMiddleware.token
 
         payload = JWT.decode(AuthorizationMiddleware.token, nil, false).first
 
