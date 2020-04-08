@@ -69,14 +69,15 @@ module Zaikio
 
       private
 
-      def create_token_data(payload)
+      def create_token_data(payload) # rubocop:disable Metrics/AbcSize
         subjects = payload["sub"].split(">")
 
         OpenStruct.new(
           audience: payload["aud"].first,
           on_behalf_of_id: subjects.first.split("/").last,
           subject_id: subjects.last.split("/").last,
-          subject_type: subjects.last.split("/").first
+          subject_type: subjects.last.split("/").first,
+          scopes: payload["scope"]
         )
       end
     end
