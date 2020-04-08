@@ -7,6 +7,14 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     end
   end
 
+  def client_id
+    "da6333fc-19ab-51d7-8295-4904358c5ecb"
+  end
+
+  def client_secret
+    "e415a98b72f0b48f554de75756f31780"
+  end
+
   def token
     "eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJQZXJzb24vMzgzNjYzYmMtMTQ5YS01Yjc2LWI1MGQtZWUwMzkwNDZjMTJlIiwiYXVkIjpbIlBlcnNvbi8zODM2NjNiYy0xNDlhLTViNzYtYjUwZC1lZTAzOTA0NmMxMmUiXSwianRpIjoiYTE5MTAwNGYtM2EwMi00MGY4LWI2ZGQtYjM0MTQxM2FkOTMxIiwibmJmIjoxNTg1NjgwNTIzLCJleHAiOjMzMTQyNTkyOTIzLCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9ucy5ydyIsImRpcmVjdG9yeS5wZXJzb24ucnciLCJkaXJlY3RvcnkucmVtb3ZlX21hY2hpbmVzLnciLCJkaXJlY3RvcnkucmVtb3ZlX3NvZnR3YXJlLnciLCJkaXJlY3Rvcnkuc2l0ZXMucnciLCJkaXJlY3Rvcnkuc29mdHdhcmUucnciXX0.VkU-uX_drgB8JL8Ir0nM3sVGLsFMYGrTzV17e1mVWAIibeK4CGbQz7aq9r3hszx-qFYRSwpYLfFKeoRLJ_UGxVYaz8h4kNItaOHoGBJKZe_PsU9DA4MBr-3n0zVa_7zxcNaeFflTgq-ZK-2yrXuxyyI2q-QXkEbRGGbemml2jKJB6Vgf3AYJUYlEn24NpoMzntBncGna7Ejvh1I3gyUr6FTgvCn0HAIC9xF-OT7pYpZ85QW8E2jdKnlD5zydI7d7qjC6GTDRovO_ePrwH5oKPxY7tB6aN8x4S_EfyAXDRT0KkicnQM4KcT4HL8xlRcFCOCGXUCjec9bLOQuLW98Biw" # rubocop:disable Layout/LineLength
   end
@@ -133,6 +141,19 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
       roles = Zaikio::Directory::Role.where(lang: "de")
       owner_role = roles.to_a.find { |r| r.id == "owner" }
       assert_equal "Eigentümer", owner_role.name
+    end
+  end
+
+  test "fetches connections" do
+    VCR.use_cassette("connections") do
+      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
+        connections = Zaikio::Directory::Connection.all
+        assert_equal 3, connections.size
+        assert_equal "Person", connections.first.connectable_type
+        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connections.first.connectable_id
+        assert_equal ["directory.person.r", "warehouse.items.r"], connections
+          .first.granted_oauth_scopes
+      end
     end
   end
 end

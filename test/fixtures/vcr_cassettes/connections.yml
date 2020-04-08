@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://directory.zaikio.test/api/v1/connections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Authorization:
+      - Basic ZGE2MzMzZmMtMTlhYi01MWQ3LTgyOTUtNDkwNDM1OGM1ZWNiOmU0MTVhOThiNzJmMGI0OGY1NTRkZTc1NzU2ZjMxNzgw
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f181e570789387368a17beac31104775"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 644acaf8-1c3c-45ec-bb4b-cd5f57ac0706
+      X-Runtime:
+      - '0.120672'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 08 Apr 2020 07:25:55 GMT
+      Content-Length:
+      - '825'
+    body:
+      encoding: UTF-8
+      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":["accounting.invoice_billed","warehouse.item_moved"],"granted_oauth_scopes":["directory.person.r","warehouse.items.r"]},{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":["warehouse.item_moved"],"granted_oauth_scopes":["directory.person.r"]},{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":[],"granted_oauth_scopes":["directory.machines.rw","directory.organization.r"]}]'
+    http_version: null
+  recorded_at: Wed, 08 Apr 2020 07:25:55 GMT
+recorded_with: VCR 5.1.0

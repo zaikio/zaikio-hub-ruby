@@ -3,6 +3,7 @@ require "spyke"
 require "zaikio/directory/configuration"
 require "zaikio/directory/json_parser"
 require "zaikio/directory/authorization_middleware"
+require "zaikio/directory/basic_auth_middleware"
 
 # Models
 require "zaikio/directory/base"
@@ -18,6 +19,7 @@ require "zaikio/directory/current_person"
 require "zaikio/directory/current_organization"
 require "zaikio/directory/role"
 require "zaikio/directory/revoked_access_token"
+require "zaikio/directory/connection"
 
 module Zaikio
   module Directory
@@ -39,6 +41,13 @@ module Zaikio
         AuthorizationMiddleware.reset_token
       end
 
+      def with_basic_auth(login, password)
+        BasicAuthMiddleware.credentials [login, password]
+        yield
+      ensure
+        BasicAuthMiddleware.reset_credentials
+      end
+
       def current_token_data
         return unless AuthorizationMiddleware.token
 
@@ -53,6 +62,7 @@ module Zaikio
           c.response    :logger, configuration&.logger
           c.use         JSONParser
           c.use         AuthorizationMiddleware
+          c.use         BasicAuthMiddleware
           c.adapter     Faraday.default_adapter
         end
       end
