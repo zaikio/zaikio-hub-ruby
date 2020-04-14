@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    zaikio-directory (0.0.6)
+    zaikio-directory (0.0.7)
       jwt (~> 2.2.1)
       multi_json (~> 1.14.1)
       oj (~> 3.10.5)
