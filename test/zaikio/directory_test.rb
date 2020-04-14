@@ -127,10 +127,12 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
         organization.fetch
         assert_equal "Bounty Soap Inc.", organization.name
 
-        machine.destroy
-        assert_requested :delete, "#{host}/machines/#{machine.id}/machine_ownership",
-                         headers: default_headers(org_token), body: "{}",
-                         times: 1
+        assert_raise Spyke::ConnectionError do
+          machine.destroy
+          assert_requested :delete, "#{host}/machines/#{machine.id}/machine_ownership",
+                           headers: default_headers(org_token), body: "{}",
+                           times: 1
+        end
         assert_equal "Frank Gallikanokus", organization.members.first.full_name
       end
     end
@@ -154,6 +156,24 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
         assert_equal ["directory.person.r", "warehouse.items.r"], connections
           .first.granted_oauth_scopes
       end
+    end
+  end
+
+  test "works with fallbacks" do
+    stub_request(:get, "http://directory.zaikio.test/api/v1/person")
+      .with(
+        headers: {
+          "Authorization" => "Bearer #{token}",
+          "User-Agent" => "Faraday v1.0.1"
+        }
+      )
+      .to_return(status: 403, body: "", headers: {})
+
+    Zaikio::Directory.with_token(token) do
+      person = Zaikio::Directory::CurrentPerson
+               .find_with_fallback(Zaikio::Directory::CurrentPerson.new(full_name: "Hello World"))
+
+      assert_equal "Hello World", person.full_name
     end
   end
 end

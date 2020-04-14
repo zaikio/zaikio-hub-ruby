@@ -9,6 +9,10 @@ module Zaikio
         all.find_one
       end
 
+      def self.find_with_fallback(fallback)
+        all.with_fallback(fallback).find_one
+      end
+
       # Associations
       has_many :memberships,             class_name: "Zaikio::Directory::Membership",
                                          uri: "organization/memberships"
