@@ -127,7 +127,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
         organization.fetch
         assert_equal "Bounty Soap Inc.", organization.name
 
-        assert_raise Spyke::ConnectionError do
+        assert_raise Zaikio::ConnectionError do
           machine.destroy
           assert_requested :delete, "#{host}/machines/#{machine.id}/machine_ownership",
                            headers: default_headers(org_token), body: "{}",
@@ -160,10 +160,31 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "works with fallbacks" do
-    stub_request(:get, "http://directory.zaikio.test/api/v1/person")
+    host = "http://directory.zaikio.test/api/v1"
+    stub_request(:get, "#{host}/person")
       .with(
         headers: {
           "Authorization" => "Bearer #{token}",
+          "User-Agent" => "Faraday v1.0.1"
+        }
+      )
+      .to_return(status: 403, body: "", headers: {})
+
+    stub_request(:get, "#{host}/machines/machine-id?current_organization_id")
+      .with(
+        headers: {
+          "Authorization" => "Bearer #{org_token}",
+          "User-Agent" => "Faraday v1.0.1"
+        }
+      )
+      .to_return(status: 404, body: "", headers: {})
+
+    stub_request(:post, "#{host}/machines")
+      .with(
+        body: "{\"machine\":{\"current_organization_id\":null,\"name\":\"Machine Name\"}}",
+        headers: {
+          "Authorization" => "Bearer #{org_token}",
+          "Content-Type" => "application/json",
           "User-Agent" => "Faraday v1.0.1"
         }
       )
@@ -174,6 +195,22 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
                .find_with_fallback(Zaikio::Directory::CurrentPerson.new(full_name: "Hello World"))
 
       assert_equal "Hello World", person.full_name
+
+      organization_memberships = person.organization_memberships.with_fallback.to_a
+      assert_equal [], organization_memberships
+      assert_equal [], person.organizations
+    end
+
+    Zaikio::Directory.with_token(org_token) do
+      organization = Zaikio::Directory::CurrentOrganization.new
+
+      assert_raise Zaikio::ResourceNotFound do
+        organization.machines.find("machine-id")
+      end
+
+      assert_raise Zaikio::ConnectionError do
+        organization.machines.create(name: "Machine Name")
+      end
     end
   end
 end

@@ -106,3 +106,38 @@ Zaikio::Directory.with_token(token) do
   Zaikio::Directory::RevokedAccessToken.create
 end
 ```
+
+### Error Handling
+
+If an unexpected error occurs with an API call (i.e. an error that has no status code `2xx`, `404` or `422`) then a `Zaikio::ConnectionError` is thrown automatically (for `404` there will be a `Zaikio::ResourceNotFound`).
+
+This can be easily caught using the `with_fallback` method. We recommend to always work with fallbacks.
+
+```rb
+Zaikio::Directory.with_token(token) do
+  person = Zaikio::Directory::CurrentPerson
+           .find_with_fallback(Zaikio::Directory::CurrentPerson.new(full_name: "Hello World"))
+
+  person.organizations # Automatically uses empty array as fallback
+end
+
+Zaikio::Directory.with_token(token) do
+  organization = Zaikio::Directory::CurrentOrganization.new
+
+  organization.machines.with_fallback.all
+  organization.machines
+    .with_fallback(Zaikio::Directory::Machine.new(name: 'My Machine'))
+    .find('machine-id')
+
+
+  organization.machines
+    .with_fallback(Zaikio::Directory::Machine.new(name: 'My Machine'))
+    .find('machine-does-not-exist') # => raises Zaikio::ResourceNotFound
+
+  begin
+    organization.machines.create(name: "Machine Name")
+  rescue Zaikio::ConnectionError
+    # Do something
+  end
+end
+```

@@ -22,7 +22,7 @@ module Zaikio
       end
 
       def organizations
-        organization_memberships.map(&:organization)
+        organization_memberships.with_fallback.map(&:organization)
       end
 
       def admin_organizations

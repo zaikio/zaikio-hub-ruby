@@ -4,13 +4,17 @@ module Zaikio
   module Directory
     class JSONParser < Faraday::Response::Middleware
       def on_complete(env)
-        unless /^(2\d\d)|422$/.match?(env.status.to_s)
-          Zaikio::Directory.configuration.logger
-                           .error("Zaikio::Directory Status Code #{env.status}, #{env.body}")
-          raise Spyke::ConnectionError, "Status Code #{env.status}, #{env.body}"
-        end
+        connection_error(env) unless /^(2\d\d)|422|404$/.match?(env.status.to_s)
+
+        raise Spyke::ResourceNotFound if env.status.to_s == "404"
 
         env.body = parse_body(env.body)
+      end
+
+      def connection_error(env)
+        Zaikio::Directory.configuration.logger
+                         .error("Zaikio::Directory Status Code #{env.status}, #{env.body}")
+        raise Spyke::ConnectionError, "Status Code #{env.status}, #{env.body}"
       end
 
       def parse_body(body)
@@ -24,7 +28,7 @@ module Zaikio
         {
           data: {},
           metadata: {},
-          errors: { "base" => body }
+          errors: {}
         }
       end
     end

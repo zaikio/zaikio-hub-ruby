@@ -6,6 +6,7 @@ require "zaikio/directory/authorization_middleware"
 require "zaikio/directory/basic_auth_middleware"
 
 # Models
+require "zaikio/error"
 require "zaikio/directory/base"
 require "zaikio/directory/organization_membership"
 require "zaikio/directory/business_relationship"

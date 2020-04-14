@@ -15,22 +15,22 @@ module Zaikio
 
       # Associations
       has_many :memberships,             class_name: "Zaikio::Directory::Membership",
-                                         uri: "organization/memberships"
+                                         uri: "organization/memberships(/:id)"
       has_many :business_relationships,  class_name: "Zaikio::Directory::BusinessRelationship",
-                                         uri: "organization/business_relationships"
+                                         uri: "organization/business_relationships(/:id)"
       has_many :software,                class_name: "Zaikio::Directory::Software",
-                                         uri: "software"
+                                         uri: "software(/:id)"
       has_many :machines,                class_name: "Zaikio::Directory::Machine",
-                                         uri: "machines"
+                                         uri: "machines(/:id)"
       has_many :sites,                   class_name: "Zaikio::Directory::Site",
-                                         uri: "sites"
+                                         uri: "sites(/:id)"
 
       def fetch
         self.attributes = get
       end
 
       def members
-        memberships.map(&:person)
+        memberships.with_fallback.map(&:person)
       end
     end
   end
