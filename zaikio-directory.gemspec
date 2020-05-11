@@ -7,8 +7,8 @@ require "zaikio/directory/version"
 Gem::Specification.new do |spec|
   spec.name        = "zaikio-directory"
   spec.version     = Zaikio::Directory::VERSION
-  spec.authors     = ["Zaikio GmbH"]
-  spec.email       = ["js@crispymtn.com"]
+  spec.authors     = ["crispymtn", "Jalyna Schröder", "Martin Spickermann"]
+  spec.email       = ["op@crispymtn.com", "js@crispymtn.com", "spickermann@gmail.com"]
   spec.homepage    = "https://www.zaikio.com/"
   spec.summary     = "Ruby API Client for Zaikio's Directory"
   spec.description = "Ruby API Client for Zaikio's Directory"

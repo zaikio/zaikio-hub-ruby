@@ -4,12 +4,13 @@ AllCops:
     - bin/*
     - tmp/*
     - Rakefile
+  NewCops: disable
 
 require:
   - rubocop-performance
   - rubocop-rails
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 100
 
 Metrics/ClassLength:
