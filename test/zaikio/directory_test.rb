@@ -23,6 +23,10 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     "eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiNWRmNDU5MGUtNzM4Mi00YTMxLWE1N2YtYWUwZTBjZTkwMmYyIiwibmJmIjoxNTg1ODM5NDQ0LCJleHAiOjMzMTQyNzUxODQ0LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3Il19.NXUx3WUdcnUHlNG6s_fpEt2aH8xa-NFwNVF8vtk15P1DhJdP2e-vsFtOgRpwMrQc6MwDpaBG0L4PYV-NSLIU0Zqm1SLlWTodoAGWr31uwFUji0_8aBNsiIXVEhr5xfWYckUlw44xkcLAoD1Jo5t3BJvXdlQlGtgWg7jTj8rBRnafN5gm_ebbB17_TDohTnpMZQxOi8iKdl-hCAMHs3CjbN_TxHAblQbnhxvx01OhDrMOVNqsQpH3hGcr-rSihO85UpoAwDfqidiiGtnCgUsE5p8QHIqO8wgGAGqUHutg7W4GRH_T_OAfS7VbH9G60mazWYIhWW-JAxh-KRkg0wcP5g" # rubocop:disable Layout/LineLength
   end
 
+  def org_token_specialists
+    "eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiNDhmYTZhMjAtYTg2Yi00MGM5LTg0NzAtOTNhNzRjYjIyOTUxIiwibmJmIjoxNTg5NTUxNjg1LCJleHAiOjMzMTQ2NDY0MDg1LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuY29uZmlkZW50aWFsX21hY2hpbmVfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfc3BlY2lhbGlzdF9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5yZW1vdmVfbWFjaGluZXMudyIsImRpcmVjdG9yeS5yZW1vdmVfc3BlY2lhbGlzdHMudyIsImRpcmVjdG9yeS5zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciXX0.bbrdxWTkltZ7NSojZ9AdQz7e9y4VnGczUEn1qsP3D8qlK8B7y0kt3RBHSfyCMBGXqTvjAbGcNTbmqEKgx-cmQNyduucmqh1XsNeWCz-6QU9TfwCOHYiqFu8PIU03HEXb9fxgIWGlruoQrPuMWDlN0BOBcvVpZSyi5BEnsNXzZ79Y3UNg8wEr57VBkKlj2cWzU6prSa8c2N-z38gBoN28XyGYWguAqvMfpbxBautzDUuhlwVArKl1ZTkSUmqsExaYSJRVLoCoVjdQHt-UA7JVGzkWvMlSjFvaDTvstad5ajxM79t0G7di28EdlKiU4-KwNZ0EbJcU2zsdu7FBA1KvSw" # rubocop:disable Layout/LineLength
+  end
+
   def default_headers(token)
     {
       "Accept" => "*/*",
@@ -143,6 +147,30 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
       roles = Zaikio::Directory::Role.where(lang: "de")
       owner_role = roles.to_a.find { |r| r.id == "owner" }
       assert_equal "Eigentümer", owner_role.name
+    end
+  end
+
+  test "fetches specialists" do
+    host = "http://directory.zaikio.test/api/v1"
+    VCR.use_cassette("current_organization_specialists") do
+      Zaikio::Directory.with_token(org_token_specialists) do
+        organization = Zaikio::Directory::CurrentOrganization.new
+        specialist_data = {
+          name: "My Specialist",
+          kind: "boxing"
+        }
+        specialist = organization.specialists.create(specialist_data)
+
+        body = { specialist: { current_organization_id: nil }.merge(specialist_data) }
+        assert_requested :post, "#{host}/specialists",
+                         headers: default_headers(org_token_specialists), body: body.to_json,
+                         times: 1
+        assert_requested :post, "#{host}/specialists/#{specialist.id}/specialist_ownership",
+                         headers: default_headers(org_token_specialists), body: "{}",
+                         times: 1
+
+        assert_not_nil specialist.id
+      end
     end
   end
 

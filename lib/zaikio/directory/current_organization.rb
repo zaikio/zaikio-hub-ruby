@@ -22,6 +22,8 @@ module Zaikio
                                          uri: "software(/:id)"
       has_many :machines,                class_name: "Zaikio::Directory::Machine",
                                          uri: "machines(/:id)"
+      has_many :specialists,             class_name: "Zaikio::Directory::Specialist",
+                                         uri: "specialists(/:id)"
       has_many :sites,                   class_name: "Zaikio::Directory::Site",
                                          uri: "sites(/:id)"
 

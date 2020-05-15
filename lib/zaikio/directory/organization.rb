@@ -12,6 +12,8 @@ module Zaikio
                                          uri: "person/organizations/:organization_id/software"
       has_many :machines,                class_name: "Zaikio::Directory::Machine",
                                          uri: "person/organizations/:organization_id/machines"
+      has_many :specialists,             class_name: "Zaikio::Directory::Specialist",
+                                         uri: "person/organizations/:organization_id/specialists"
       has_many :sites,                   class_name: "Zaikio::Directory::Site",
                                          uri: "person/organizations/:organization_id/sites"
     end
