@@ -20,7 +20,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   def org_token
-    "eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiNWRmNDU5MGUtNzM4Mi00YTMxLWE1N2YtYWUwZTBjZTkwMmYyIiwibmJmIjoxNTg1ODM5NDQ0LCJleHAiOjMzMTQyNzUxODQ0LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3Il19.NXUx3WUdcnUHlNG6s_fpEt2aH8xa-NFwNVF8vtk15P1DhJdP2e-vsFtOgRpwMrQc6MwDpaBG0L4PYV-NSLIU0Zqm1SLlWTodoAGWr31uwFUji0_8aBNsiIXVEhr5xfWYckUlw44xkcLAoD1Jo5t3BJvXdlQlGtgWg7jTj8rBRnafN5gm_ebbB17_TDohTnpMZQxOi8iKdl-hCAMHs3CjbN_TxHAblQbnhxvx01OhDrMOVNqsQpH3hGcr-rSihO85UpoAwDfqidiiGtnCgUsE5p8QHIqO8wgGAGqUHutg7W4GRH_T_OAfS7VbH9G60mazWYIhWW-JAxh-KRkg0wcP5g" # rubocop:disable Layout/LineLength
+    "eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiYWUwYjQwMDUtZDFlZC00YmY2LWFhYjAtODQzMDFiZDY0ODk1IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfbWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmNvbmZpZGVudGlhbF9zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVzLnJ3IiwiZGlyZWN0b3J5Lm1hbnVmYWN0dXJlZF9tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnJlbW92ZV9tYWNoaW5lcy53IiwiZGlyZWN0b3J5LnJlbW92ZV9zb2Z0d2FyZS53IiwiZGlyZWN0b3J5LnJlbW92ZV9zcGVjaWFsaXN0cy53IiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3IiwiZGlyZWN0b3J5LnNwZWNpYWxpc3Rfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5zcGVjaWFsaXN0cy5ydyJdfQ.Ejpz-i8fafzarlgArU1PrifEiHAzPhByUw2bXpsjodC6dDZOiznZgOmDQg-YnXN2ksYbBeHvtaNrsd4qgHAnoP3T9_shDSslaSbBmvcqVLPcgBEvCirVaXjHMAM64oulpmsNvyWfNKcBCI-yB4jARgfOT3EGxT_x56FMRFsosvlY7kAeLd--ta53_kb5MxWvKy0fZ-6sLV44CKK74q4fmerjY-k8ZF4kdsPllX1KEGoa9m4p_FZaHqNKBg0CcITGBBwPMnzMsOzaxaW3o9-O-qm6CmPy_xrJb3B0VPm9DlEKlbKxhZqLSva-wbaUgTRXb_8jt2z8YyqnZSk93mUNng" # rubocop:disable Layout/LineLength
   end
 
   def org_token_specialists
@@ -107,7 +107,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "makes calls as organization" do
     host = "http://directory.zaikio.test/api/v1"
-    VCR.use_cassette("current_organization") do
+    VCR.use_cassette("current_organization", record: :new_episodes) do
       Zaikio::Directory.with_token(org_token) do
         organization = Zaikio::Directory::CurrentOrganization.new
         machine_data = {
@@ -131,13 +131,16 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
         organization.fetch
         assert_equal "Bounty Soap Inc.", organization.name
 
-        assert_raise Zaikio::ConnectionError do
-          machine.destroy
-          assert_requested :delete, "#{host}/machines/#{machine.id}/machine_ownership",
-                           headers: default_headers(org_token), body: "{}",
-                           times: 1
-        end
+        machine.destroy
+        assert_requested :delete, "#{host}/machines/#{machine.id}/machine_ownership",
+                         headers: default_headers(org_token), body: "{}",
+                         times: 1
         assert_equal "Frank Gallikanokus", organization.members.first.full_name
+
+        organization = Zaikio::Directory::CurrentOrganization.new
+        machine2 = organization.machines.find("55a37c0f-c2c5-531c-be8c-8e012a938fc5")
+        assert_equal "55a37c0f-c2c5-531c-be8c-8e012a938fc5", machine2.id
+        assert_equal({ "capabilities" => [] }, machine2.specification)
       end
     end
   end

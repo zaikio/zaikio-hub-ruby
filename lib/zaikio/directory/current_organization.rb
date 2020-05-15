@@ -31,6 +31,10 @@ module Zaikio
         self.attributes = get
       end
 
+      def reload
+        self.attributes = self.class.find.attributes
+      end
+
       def members
         memberships.with_fallback.map(&:person)
       end
