@@ -26,7 +26,7 @@ $ gem install zaikio-directory
 # config/initializers/zaikio_directory.rb
 
 Zaikio::Directory.configure do |config|
-  config.host :production # sandbox or production
+  config.host = :production # sandbox or production
 end
 ```
 
