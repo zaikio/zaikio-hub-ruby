@@ -9,7 +9,7 @@ module Zaikio
       end
 
       def self.credentials(credentials = nil)
-        @credentials = credentials || @credentials
+        @credentials ||= credentials
       end
 
       def call(request_env)

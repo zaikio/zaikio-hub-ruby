@@ -9,7 +9,7 @@ module Zaikio
       end
 
       def self.token(token = nil)
-        @token = token || @token
+        @token ||= token
       end
 
       def call(request_env)
