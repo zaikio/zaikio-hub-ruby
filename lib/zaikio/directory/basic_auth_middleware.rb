@@ -4,12 +4,10 @@ require "base64"
 module Zaikio
   module Directory
     class BasicAuthMiddleware < Faraday::Middleware
-      def self.reset_credentials
-        @credentials = nil
-      end
+      class_attribute :credentials
 
-      def self.credentials(credentials = nil)
-        @credentials ||= credentials
+      def self.reset_credentials
+        self.credentials = nil
       end
 
       def call(request_env)

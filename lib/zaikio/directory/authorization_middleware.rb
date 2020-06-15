@@ -4,12 +4,10 @@ require "jwt"
 module Zaikio
   module Directory
     class AuthorizationMiddleware < Faraday::Middleware
-      def self.reset_token
-        @token = nil
-      end
+      class_attribute :token
 
-      def self.token(token = nil)
-        @token ||= token
+      def self.reset_token
+        self.token = nil
       end
 
       def call(request_env)

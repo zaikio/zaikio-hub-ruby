@@ -28,24 +28,25 @@ module Zaikio
   module Directory
     class << self
       attr_accessor :configuration
+      class_attribute :connection
 
       def configure
-        @connection = nil
+        self.connection = nil
         self.configuration ||= Configuration.new
         yield(configuration)
 
-        Base.connection = connection
+        Base.connection = create_connection
       end
 
       def with_token(token)
-        AuthorizationMiddleware.token token
+        AuthorizationMiddleware.token = token
         yield
       ensure
         AuthorizationMiddleware.reset_token
       end
 
       def with_basic_auth(login, password)
-        BasicAuthMiddleware.credentials [login, password]
+        BasicAuthMiddleware.credentials = [login, password]
         yield
       ensure
         BasicAuthMiddleware.reset_credentials
@@ -59,8 +60,8 @@ module Zaikio
         create_token_data(payload)
       end
 
-      def connection
-        @connection ||= Faraday.new(url: "#{configuration.host}/api/v1") do |c|
+      def create_connection
+        self.connection = Faraday.new(url: "#{configuration.host}/api/v1") do |c|
           c.request     :json
           c.response    :logger, configuration&.logger
           c.use         JSONParser
