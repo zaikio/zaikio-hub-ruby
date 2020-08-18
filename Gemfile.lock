@@ -33,7 +33,7 @@ GEM
     hashdiff (1.0.1)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    jwt (2.2.1)
+    jwt (2.2.2)
     minitest (5.14.1)
     mocha (1.11.2)
     multi_json (1.15.0)
