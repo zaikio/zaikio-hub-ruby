@@ -54,7 +54,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "makes calls as person" do
-    host = "http://directory.zaikio.test/api/v1"
+    host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_person") do
       Zaikio::Directory.with_token(token) do
         assert_equal "Person/383663bc-149a-5b76-b50d-ee039046c12e",
@@ -106,7 +106,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "makes calls as organization" do
-    host = "http://directory.zaikio.test/api/v1"
+    host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_organization", record: :new_episodes) do
       Zaikio::Directory.with_token(org_token) do
         organization = Zaikio::Directory::CurrentOrganization.new
@@ -154,7 +154,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "fetches specialists" do
-    host = "http://directory.zaikio.test/api/v1"
+    host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_organization_specialists") do
       Zaikio::Directory.with_token(org_token_specialists) do
         organization = Zaikio::Directory::CurrentOrganization.new
@@ -191,7 +191,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "works with fallbacks" do
-    host = "http://directory.zaikio.test/api/v1"
+    host = "https://hub.zaikio.test/api/v1"
     stub_request(:get, "#{host}/person")
       .with(
         headers: {

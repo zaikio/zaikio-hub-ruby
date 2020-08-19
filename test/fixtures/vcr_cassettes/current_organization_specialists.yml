@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://directory.zaikio.test/api/v1/specialists
+    uri: https://hub.zaikio.test/api/v1/specialists
     body:
       encoding: UTF-8
       string: '{"specialist":{"current_organization_id":null,"name":"My Specialist","kind":"boxing"}}'
@@ -57,7 +57,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 14:17:25 GMT
 - request:
     method: post
-    uri: http://directory.zaikio.test/api/v1/specialists/b4fe48db-114a-46dd-9246-1ccc799e30de/specialist_ownership
+    uri: https://hub.zaikio.test/api/v1/specialists/b4fe48db-114a-46dd-9246-1ccc799e30de/specialist_ownership
     body:
       encoding: UTF-8
       string: "{}"

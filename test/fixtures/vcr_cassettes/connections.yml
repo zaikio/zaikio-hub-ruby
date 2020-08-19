@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://directory.zaikio.test/api/v1/connections
+    uri: https://hub.zaikio.test/api/v1/connections
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://directory.zaikio.test/api/v1/machines
+    uri: https://hub.zaikio.test/api/v1/machines
     body:
       encoding: UTF-8
       string: '{"machine":{"current_organization_id":null,"name":"My Machine","kind":"sheetfed_digital_press","manufacturer":"My
@@ -59,7 +59,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: post
-    uri: http://directory.zaikio.test/api/v1/machines/4f60a959-cba5-47cd-b3ee-b1967a9974af/machine_ownership
+    uri: https://hub.zaikio.test/api/v1/machines/4f60a959-cba5-47cd-b3ee-b1967a9974af/machine_ownership
     body:
       encoding: UTF-8
       string: "{}"
@@ -114,7 +114,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: get
-    uri: http://directory.zaikio.test/api/v1/organization
+    uri: https://hub.zaikio.test/api/v1/organization
     body:
       encoding: US-ASCII
       string: ''
@@ -167,7 +167,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: delete
-    uri: http://directory.zaikio.test/api/v1/machines/4f60a959-cba5-47cd-b3ee-b1967a9974af/machine_ownership
+    uri: https://hub.zaikio.test/api/v1/machines/4f60a959-cba5-47cd-b3ee-b1967a9974af/machine_ownership
     body:
       encoding: UTF-8
       string: "{}"
@@ -216,7 +216,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: get
-    uri: http://directory.zaikio.test/api/v1/organization/memberships?current_organization_id=b1475f65-236c-58b8-96e1-e1778b43beb7
+    uri: https://hub.zaikio.test/api/v1/organization/memberships?current_organization_id=b1475f65-236c-58b8-96e1-e1778b43beb7
     body:
       encoding: US-ASCII
       string: ''
@@ -272,7 +272,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: get
-    uri: http://directory.zaikio.test/api/v1/machines/55a37c0f-c2c5-531c-be8c-8e012a938fc5?current_organization_id
+    uri: https://hub.zaikio.test/api/v1/machines/55a37c0f-c2c5-531c-be8c-8e012a938fc5?current_organization_id
     body:
       encoding: US-ASCII
       string: ''
@@ -327,7 +327,7 @@ http_interactions:
   recorded_at: Fri, 15 May 2020 16:01:48 GMT
 - request:
     method: get
-    uri: http://directory.zaikio.test/api/v1/machines/55a37c0f-c2c5-531c-be8c-8e012a938fc5/machine_specification
+    uri: https://hub.zaikio.test/api/v1/machines/55a37c0f-c2c5-531c-be8c-8e012a938fc5/machine_specification
     body:
       encoding: US-ASCII
       string: ''
