@@ -190,6 +190,28 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     end
   end
 
+  test "fetches subscriptions" do
+    VCR.use_cassette("subscriptions") do
+      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
+        subscriptions = Zaikio::Directory::Subscription.all
+        assert_equal 1, subscriptions.size
+        subscription = subscriptions.first
+        assert_equal "Organization", subscription.subscriber_type
+        assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.subscriber_id
+        assert_equal "Organization-b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.id
+
+        subscription = Zaikio::Directory::Subscription
+                       .find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
+        assert_equal "Organization", subscription.subscriber_type
+        assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.subscriber_id
+        assert_equal({ "orders_created" => 12 }, subscription.usages_in_current_billing_period)
+        subscription.increment_usage_by!(:orders_created, 8)
+        subscription.reload
+        assert_equal({ "orders_created" => 20 }, subscription.usages_in_current_billing_period)
+      end
+    end
+  end
+
   test "works with fallbacks" do
     host = "https://hub.zaikio.test/api/v1"
     stub_request(:get, "#{host}/person")

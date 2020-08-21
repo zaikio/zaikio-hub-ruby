@@ -97,6 +97,10 @@ end
 ```rb
 Zaikio::Directory.with_basic_auth(client_id, client_secret) do
   connections = Zaikio::Directory::Connection.all
+  subscription = Zaikio::Directory::Subscription.find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
+  subscription.plan # => "advanced"
+  subscription.activate!
+  subscription.increment_usage_by!(:orders_created, 12)
 end
 
 roles = Zaikio::Directory::Role.all
