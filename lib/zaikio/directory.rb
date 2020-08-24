@@ -23,6 +23,7 @@ require "zaikio/directory/current_organization"
 require "zaikio/directory/role"
 require "zaikio/directory/revoked_access_token"
 require "zaikio/directory/connection"
+require "zaikio/directory/subscription"
 
 module Zaikio
   module Directory
@@ -61,7 +62,8 @@ module Zaikio
       end
 
       def create_connection
-        self.connection = Faraday.new(url: "#{configuration.host}/api/v1") do |c|
+        self.connection = Faraday.new(url: "#{configuration.host}/api/v1",
+                                      ssl: { verify: configuration.environment != :test }) do |c|
           c.request     :json
           c.response    :logger, configuration&.logger
           c.use         JSONParser
@@ -73,7 +75,7 @@ module Zaikio
 
       private
 
-      def create_token_data(payload) # rubocop:disable Metrics/AbcSize
+      def create_token_data(payload)
         subjects = payload["sub"].split(">")
 
         OpenStruct.new(
