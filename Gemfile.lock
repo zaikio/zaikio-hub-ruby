@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     zaikio-directory (0.1.0)
+      concurrent-ruby
       jwt (~> 2.2.1)
       multi_json (>= 1.14.1, < 1.16.0)
       oj (~> 3.10.5)

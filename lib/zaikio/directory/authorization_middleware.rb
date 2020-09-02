@@ -1,10 +1,19 @@
 require "faraday"
 require "jwt"
+require "concurrent"
 
 module Zaikio
   module Directory
     class AuthorizationMiddleware < Faraday::Middleware
-      class_attribute :token
+      def self.token
+        @token ||= Concurrent::ThreadLocalVar.new { nil }
+        @token.value
+      end
+
+      def self.token=(value)
+        @token ||= Concurrent::ThreadLocalVar.new { nil }
+        @token.value = value
+      end
 
       def self.reset_token
         self.token = nil

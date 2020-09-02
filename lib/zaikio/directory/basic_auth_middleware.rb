@@ -6,6 +6,16 @@ module Zaikio
     class BasicAuthMiddleware < Faraday::Middleware
       class_attribute :credentials
 
+      def self.credentials
+        @credentials ||= Concurrent::ThreadLocalVar.new { nil }
+        @credentials.value
+      end
+
+      def self.credentials=(value)
+        @credentials ||= Concurrent::ThreadLocalVar.new { nil }
+        @credentials.value = value
+      end
+
       def self.reset_credentials
         self.credentials = nil
       end

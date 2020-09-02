@@ -101,6 +101,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
                          times: 1) do |req|
                            JSON.parse(req.body)["site"]["name"] == "A new cool name"
                          end
+        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", Zaikio::Directory.current_token_data.subject_id
       end
     end
   end
