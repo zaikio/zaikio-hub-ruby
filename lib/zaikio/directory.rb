@@ -29,6 +29,7 @@ module Zaikio
   module Directory
     class << self
       attr_accessor :configuration
+
       class_attribute :connection
 
       def configure
