@@ -32,8 +32,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
       "Accept" => "*/*",
       "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
       "Authorization" => "Bearer #{token}",
-      "Content-Type" => "application/json",
-      "User-Agent" => "Faraday v1.0.1"
+      "Content-Type" => "application/json"
     }
   end
 
@@ -101,7 +100,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
                          times: 1) do |req|
                            JSON.parse(req.body)["site"]["name"] == "A new cool name"
                          end
-        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", Zaikio::Directory.current_token_data.subject_id
+        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e",
+                     Zaikio::Directory.current_token_data.subject_id
       end
     end
   end
@@ -218,8 +218,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     stub_request(:get, "#{host}/person")
       .with(
         headers: {
-          "Authorization" => "Bearer #{token}",
-          "User-Agent" => "Faraday v1.0.1"
+          "Authorization" => "Bearer #{token}"
         }
       )
       .to_return(status: 403, body: "", headers: {})
@@ -227,8 +226,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     stub_request(:get, "#{host}/machines/machine-id?current_organization_id")
       .with(
         headers: {
-          "Authorization" => "Bearer #{org_token}",
-          "User-Agent" => "Faraday v1.0.1"
+          "Authorization" => "Bearer #{org_token}"
         }
       )
       .to_return(status: 404, body: "", headers: {})
@@ -238,8 +236,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
         body: "{\"machine\":{\"current_organization_id\":null,\"name\":\"Machine Name\"}}",
         headers: {
           "Authorization" => "Bearer #{org_token}",
-          "Content-Type" => "application/json",
-          "User-Agent" => "Faraday v1.0.1"
+          "Content-Type" => "application/json"
         }
       )
       .to_return(status: 403, body: "", headers: {})
