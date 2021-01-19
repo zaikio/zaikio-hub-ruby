@@ -24,6 +24,7 @@ require "zaikio/directory/role"
 require "zaikio/directory/revoked_access_token"
 require "zaikio/directory/connection"
 require "zaikio/directory/subscription"
+require "zaikio/directory/test_account"
 
 module Zaikio
   module Directory

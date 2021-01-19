@@ -103,6 +103,15 @@ Zaikio::Directory.with_basic_auth(client_id, client_secret) do
   subscription.increment_usage_by!(:orders_created, 12)
 end
 
+Zaikio::Directory.with_basic_auth(client_id, client_secret) do
+  Zaikio::Directory::TestAccount.create(
+    name: "My Test Org",
+    country_code: "DE",
+    kinds: ["printer"],
+    connection_attributes: ["procurement_consumer"]
+  )
+end
+
 roles = Zaikio::Directory::Role.all
 revoked_access_tokens = Zaikio::Directory::RevokedAccessToken.all
 

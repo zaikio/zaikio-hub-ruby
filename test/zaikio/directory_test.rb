@@ -213,6 +213,24 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     end
   end
 
+  test "creates test accounts" do
+    VCR.use_cassette("test_accounts") do
+      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
+        Zaikio::Directory::TestAccount.create(
+          name: "My Test Org",
+          country_code: "DE",
+          kinds: ["printer"],
+          connection_attributes: ["procurement_consumer"]
+        )
+
+        test_accounts = Zaikio::Directory::TestAccount.all
+
+        assert_equal 1, test_accounts.size
+        assert_equal "My Test Org", test_accounts.first.name
+      end
+    end
+  end
+
   test "works with fallbacks" do
     host = "https://hub.zaikio.test/api/v1"
     stub_request(:get, "#{host}/person")
