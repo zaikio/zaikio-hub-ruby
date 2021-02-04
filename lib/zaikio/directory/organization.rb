@@ -5,6 +5,11 @@ module Zaikio
 
       include_root_in_json :organization
 
+      # Attributes
+      attributes :name, :slug, :logo_url, :connected, :subscription,
+                 :created_at, :updated_at, :country_code, :kinds,
+                 :sections, :currency, :brand_color, :test_account_owner_id
+
       # Associations
       has_many :memberships,             class_name: "Zaikio::Directory::Membership",
                                          uri: "person/organizations/:organization_id/memberships"
