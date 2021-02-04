@@ -2,7 +2,7 @@ module Zaikio
   module Directory
     class CurrentOrganization < Base
       self.primary_key = nil
-      include_root_in_json :organization
+
       uri "organization"
 
       def self.find
@@ -12,6 +12,13 @@ module Zaikio
       def self.find_with_fallback(fallback)
         all.with_fallback(fallback).find_one
       end
+
+      include_root_in_json :organization
+
+      # Attributes
+      attributes :name, :slug, :logo_url, :connected, :subscription,
+                 :created_at, :updated_at, :country_code, :kinds,
+                 :sections, :currency, :brand_color, :test_account_owner_id
 
       # Associations
       has_many :memberships,             class_name: "Zaikio::Directory::Membership",

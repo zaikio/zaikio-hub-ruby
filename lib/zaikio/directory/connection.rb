@@ -5,6 +5,10 @@ module Zaikio
 
       include_root_in_json :connection
 
+      # Attributes
+      attributes :updated_at, :created_at, :connectable_type, :connectable_id,
+                 :app_name, :granted_oauth_scopes
+
       def initialize(attributes = {})
         if attributes["connectable_id"]
           super(attributes.merge(

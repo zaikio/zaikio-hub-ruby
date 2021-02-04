@@ -231,6 +231,14 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     end
   end
 
+  test "respects attributes" do
+    organization = Zaikio::Directory::Organization.new
+
+    assert_nil organization.id
+    assert_nil organization.name
+    assert_nil organization.kinds
+  end
+
   test "works with fallbacks" do
     host = "https://hub.zaikio.test/api/v1"
     stub_request(:get, "#{host}/person")
