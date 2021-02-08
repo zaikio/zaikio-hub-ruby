@@ -7,6 +7,7 @@ require "zaikio/directory/basic_auth_middleware"
 
 # Models
 require "zaikio/error"
+require "zaikio/directory/client"
 require "zaikio/directory/base"
 require "zaikio/directory/asset"
 require "zaikio/directory/organization_membership"
@@ -74,8 +75,6 @@ module Zaikio
           c.adapter     Faraday.default_adapter
         end
       end
-
-      private
 
       def create_token_data(payload)
         subjects = payload["sub"].split(">")

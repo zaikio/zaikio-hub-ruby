@@ -231,6 +231,44 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
     end
   end
 
+  test "uses zaikio client from token" do
+    VCR.use_cassette("client_requests_organization") do
+      client = Zaikio::Directory::Client.from_token(org_token)
+
+      assert_equal "Bounty Soap Inc.", client.organization.name
+      assert_equal "Black Mesa Research Facility", client.sites.first.name
+      machine = client.machines.create(
+        name: "Machine Name",
+        kind: "sheetfed_digital_press",
+        manufacturer: "My Manufacturer"
+      )
+      assert_equal "Machine Name", machine.name
+    end
+  end
+
+  test "uses zaikio client from credentials" do
+    VCR.use_cassette("client_requests_credentials") do
+      client = Zaikio::Directory::Client.from_credentials(client_id, client_secret)
+
+      assert_raise do
+        client.organization
+      end
+
+      connection = client.connections.first
+      assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
+
+      client.test_accounts.create(
+        name: "My Test Org",
+        country_code: "DE",
+        kinds: ["printer"],
+        connection_attributes: ["procurement_consumer"]
+      )
+
+      test_account = client.test_accounts.last
+      assert_equal "My Test Org", test_account.name
+    end
+  end
+
   test "respects attributes" do
     organization = Zaikio::Directory::Organization.new
 

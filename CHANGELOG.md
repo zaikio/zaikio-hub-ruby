@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `Zaikio::Directory::Client` as a wrapper that does not need block syntax for authorization
+
 ## [0.2.0] - 2020-01-21
 
 ### Added
