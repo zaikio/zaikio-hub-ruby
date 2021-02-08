@@ -1,0 +1,218 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/organization
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiYWUwYjQwMDUtZDFlZC00YmY2LWFhYjAtODQzMDFiZDY0ODk1IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfbWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmNvbmZpZGVudGlhbF9zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVzLnJ3IiwiZGlyZWN0b3J5Lm1hbnVmYWN0dXJlZF9tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnJlbW92ZV9tYWNoaW5lcy53IiwiZGlyZWN0b3J5LnJlbW92ZV9zb2Z0d2FyZS53IiwiZGlyZWN0b3J5LnJlbW92ZV9zcGVjaWFsaXN0cy53IiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3IiwiZGlyZWN0b3J5LnNwZWNpYWxpc3Rfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5zcGVjaWFsaXN0cy5ydyJdfQ.Ejpz-i8fafzarlgArU1PrifEiHAzPhByUw2bXpsjodC6dDZOiznZgOmDQg-YnXN2ksYbBeHvtaNrsd4qgHAnoP3T9_shDSslaSbBmvcqVLPcgBEvCirVaXjHMAM64oulpmsNvyWfNKcBCI-yB4jARgfOT3EGxT_x56FMRFsosvlY7kAeLd--ta53_kb5MxWvKy0fZ-6sLV44CKK74q4fmerjY-k8ZF4kdsPllX1KEGoa9m4p_FZaHqNKBg0CcITGBBwPMnzMsOzaxaW3o9-O-qm6CmPy_xrJb3B0VPm9DlEKlbKxhZqLSva-wbaUgTRXb_8jt2z8YyqnZSk93mUNng
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"707969071b8d7bb5d24e3d79c4acb856"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 19176756-7484-4a4e-89b9-5ac949db1f6c
+      X-Runtime:
+      - '0.055446'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 08 Feb 2021 09:39:17 GMT
+      Content-Length:
+      - '444'
+    body:
+      encoding: UTF-8
+      string: '{"id":"b1475f65-236c-58b8-96e1-e1778b43beb7","name":"Bounty Soap Inc.","slug":"bounty_soap_inc","connected":false,"kinds":["printer"],"sections":{"printer":["softcover_books","hardcover_books","business_cards","flyers"]},"country_code":"DE","brand_color":"#000000","currency":"EUR","test_account_owner_id":null,"created_at":"2021-02-04T15:59:06.324Z","updated_at":"2021-02-04T15:59:06.324Z","logo_url":null,"kind":"printer","subscription":null}'
+  recorded_at: Mon, 08 Feb 2021 09:39:17 GMT
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/sites?current_organization_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiYWUwYjQwMDUtZDFlZC00YmY2LWFhYjAtODQzMDFiZDY0ODk1IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfbWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmNvbmZpZGVudGlhbF9zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVzLnJ3IiwiZGlyZWN0b3J5Lm1hbnVmYWN0dXJlZF9tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnJlbW92ZV9tYWNoaW5lcy53IiwiZGlyZWN0b3J5LnJlbW92ZV9zb2Z0d2FyZS53IiwiZGlyZWN0b3J5LnJlbW92ZV9zcGVjaWFsaXN0cy53IiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3IiwiZGlyZWN0b3J5LnNwZWNpYWxpc3Rfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5zcGVjaWFsaXN0cy5ydyJdfQ.Ejpz-i8fafzarlgArU1PrifEiHAzPhByUw2bXpsjodC6dDZOiznZgOmDQg-YnXN2ksYbBeHvtaNrsd4qgHAnoP3T9_shDSslaSbBmvcqVLPcgBEvCirVaXjHMAM64oulpmsNvyWfNKcBCI-yB4jARgfOT3EGxT_x56FMRFsosvlY7kAeLd--ta53_kb5MxWvKy0fZ-6sLV44CKK74q4fmerjY-k8ZF4kdsPllX1KEGoa9m4p_FZaHqNKBg0CcITGBBwPMnzMsOzaxaW3o9-O-qm6CmPy_xrJb3B0VPm9DlEKlbKxhZqLSva-wbaUgTRXb_8jt2z8YyqnZSk93mUNng
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"a7ffc765cc0bda07d3c396277822580f"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 3d2b16cf-f533-437d-bfb8-318808ed42e2
+      X-Runtime:
+      - '0.024511'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 08 Feb 2021 09:39:17 GMT
+      Content-Length:
+      - '1963'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siaWQiOiJkNjMwODkxMC1mNWFlLTU4YzAtYWJhNy1kMDk5OTQ3ODQ1YzYiLCJuYW1lIjoiQmxhY2sgTWVzYSBSZXNlYXJjaCBGYWNpbGl0eSIsImhlYWRxdWFydGVyIjp0cnVlLCJjcmVhdGVkX2F0IjoiMjAyMS0wMi0wNFQxNTo1OTowNi40MThaIiwidXBkYXRlZF9hdCI6IjIwMjEtMDItMDRUMTU6NTk6MDYuNDE4WiIsImFkZHJlc3MiOnsiaWQiOiI3ZjA2ZmJiNy1hYzdhLTU1NTctODQxNS1mNzBkZTc1YmJmNWMiLCJhZGRyZXNzZWUiOiJCb3VudHkgU29hcCBJbmMuIiwic3RyZWV0IjoiQ2FsaWZvcm5pYSBTdHJlZXQgTm9ydGhlYXN0IiwibnVtYmVyIjoiMTE1IiwiemlwX2NvZGUiOiI4NzEwOCIsInRvd24iOiJBbGJ1cXVlcnF1ZSIsImNvdW50cnlfY29kZSI6IlVTIiwic3RhdGUiOiJOZXcgTWV4aWNvIiwiYWRkaXRpb24iOm51bGwsImxvY2F0aW9uIjpbMzUuMDc3NTAyLDAuMF0sImNyZWF0ZWRfYXQiOiIyMDIxLTAyLTA0VDE1OjU5OjA2LjI2MloiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wMi0wNFQxNTo1OTowNi4yNjJaIn0sIm9yZ2FuaXphdGlvbiI6eyJpZCI6ImIxNDc1ZjY1LTIzNmMtNThiOC05NmUxLWUxNzc4YjQzYmViNyIsIm5hbWUiOiJCb3VudHkgU29hcCBJbmMuIiwic2x1ZyI6ImJvdW50eV9zb2FwX2luYyIsImNvbm5lY3RlZCI6ZmFsc2UsImtpbmRzIjpbInByaW50ZXIiXSwic2VjdGlvbnMiOnsicHJpbnRlciI6WyJzb2Z0Y292ZXJfYm9va3MiLCJoYXJkY292ZXJfYm9va3MiLCJidXNpbmVzc19jYXJkcyIsImZseWVycyJdfSwiY291bnRyeV9jb2RlIjoiREUiLCJicmFuZF9jb2xvciI6IiMwMDAwMDAiLCJjdXJyZW5jeSI6IkVVUiIsInRlc3RfYWNjb3VudF9vd25lcl9pZCI6bnVsbCwiY3JlYXRlZF9hdCI6IjIwMjEtMDItMDRUMTU6NTk6MDYuMzI0WiIsInVwZGF0ZWRfYXQiOiIyMDIxLTAyLTA0VDE1OjU5OjA2LjMyNFoiLCJsb2dvX3VybCI6bnVsbCwia2luZCI6InByaW50ZXIiLCJzdWJzY3JpcHRpb24iOm51bGx9fSx7ImlkIjoiOGZmZjRhYzktOWRhYS01OWU4LTkwM2UtMWRkOTliZWI2ODc5IiwibmFtZSI6IkJsYWNrIE1lc2EgSGVhZHF1YXRlcnMiLCJoZWFkcXVhcnRlciI6ZmFsc2UsImNyZWF0ZWRfYXQiOiIyMDIxLTAyLTA0VDE1OjU5OjA2LjQxOFoiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wMi0wNFQxNTo1OTowNi40MThaIiwiYWRkcmVzcyI6eyJpZCI6IjM0ZTczZDM5LWMzMzgtNTA1NS04OTU2LTk0NThhMmU5MjZkOSIsImFkZHJlc3NlZSI6IkJvdW50eSBTb2FwIEluYy4iLCJzdHJlZXQiOiJHdXRlbmJlcmdyaW5nIiwibnVtYmVyIjoiMTciLCJ6aXBfY29kZSI6IjY5MTY4IiwidG93biI6IldpZXNsb2NoIiwiY291bnRyeV9jb2RlIjoiREUiLCJzdGF0ZSI6IkJhZGVuLVfDvHJ0dGVtYmVyZyIsImFkZGl0aW9uIjpudWxsLCJsb2NhdGlvbiI6WzQ5LjI5MDA3NTcsMC4wXSwiY3JlYXRlZF9hdCI6IjIwMjEtMDItMDRUMTU6NTk6MDYuMjYyWiIsInVwZGF0ZWRfYXQiOiIyMDIxLTAyLTA0VDE1OjU5OjA2LjI2MloifSwib3JnYW5pemF0aW9uIjp7ImlkIjoiYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwibmFtZSI6IkJvdW50eSBTb2FwIEluYy4iLCJzbHVnIjoiYm91bnR5X3NvYXBfaW5jIiwiY29ubmVjdGVkIjpmYWxzZSwia2luZHMiOlsicHJpbnRlciJdLCJzZWN0aW9ucyI6eyJwcmludGVyIjpbInNvZnRjb3Zlcl9ib29rcyIsImhhcmRjb3Zlcl9ib29rcyIsImJ1c2luZXNzX2NhcmRzIiwiZmx5ZXJzIl19LCJjb3VudHJ5X2NvZGUiOiJERSIsImJyYW5kX2NvbG9yIjoiIzAwMDAwMCIsImN1cnJlbmN5IjoiRVVSIiwidGVzdF9hY2NvdW50X293bmVyX2lkIjpudWxsLCJjcmVhdGVkX2F0IjoiMjAyMS0wMi0wNFQxNTo1OTowNi4zMjRaIiwidXBkYXRlZF9hdCI6IjIwMjEtMDItMDRUMTU6NTk6MDYuMzI0WiIsImxvZ29fdXJsIjpudWxsLCJraW5kIjoicHJpbnRlciIsInN1YnNjcmlwdGlvbiI6bnVsbH19XQ==
+  recorded_at: Mon, 08 Feb 2021 09:39:17 GMT
+- request:
+    method: post
+    uri: https://hub.zaikio.test/api/v1/machines
+    body:
+      encoding: UTF-8
+      string: '{"machine":{"current_organization_id":null,"name":"Machine Name","kind":"sheetfed_digital_press","manufacturer":"My
+        Manufacturer"}}'
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiYWUwYjQwMDUtZDFlZC00YmY2LWFhYjAtODQzMDFiZDY0ODk1IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfbWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmNvbmZpZGVudGlhbF9zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVzLnJ3IiwiZGlyZWN0b3J5Lm1hbnVmYWN0dXJlZF9tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnJlbW92ZV9tYWNoaW5lcy53IiwiZGlyZWN0b3J5LnJlbW92ZV9zb2Z0d2FyZS53IiwiZGlyZWN0b3J5LnJlbW92ZV9zcGVjaWFsaXN0cy53IiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3IiwiZGlyZWN0b3J5LnNwZWNpYWxpc3Rfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5zcGVjaWFsaXN0cy5ydyJdfQ.Ejpz-i8fafzarlgArU1PrifEiHAzPhByUw2bXpsjodC6dDZOiznZgOmDQg-YnXN2ksYbBeHvtaNrsd4qgHAnoP3T9_shDSslaSbBmvcqVLPcgBEvCirVaXjHMAM64oulpmsNvyWfNKcBCI-yB4jARgfOT3EGxT_x56FMRFsosvlY7kAeLd--ta53_kb5MxWvKy0fZ-6sLV44CKK74q4fmerjY-k8ZF4kdsPllX1KEGoa9m4p_FZaHqNKBg0CcITGBBwPMnzMsOzaxaW3o9-O-qm6CmPy_xrJb3B0VPm9DlEKlbKxhZqLSva-wbaUgTRXb_8jt2z8YyqnZSk93mUNng
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"811ee85a156eb5437533949a90292b92"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - b9fe274b-4ef7-4a91-86eb-7f1af30aa87f
+      X-Runtime:
+      - '0.344263'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 08 Feb 2021 09:39:17 GMT
+      Content-Length:
+      - '287'
+    body:
+      encoding: UTF-8
+      string: '{"id":"87669387-c02a-4588-b81d-d4910520dfe7","name":"Machine Name","serial_number":null,"manufacturer_id":null,"kind":"sheetfed_digital_press","site_id":null,"created_at":"2021-02-08T09:39:17.250Z","updated_at":"2021-02-08T09:39:17.250Z","manufacturer":"My
+        Manufacturer","owner_id":null}'
+  recorded_at: Mon, 08 Feb 2021 09:39:17 GMT
+- request:
+    method: post
+    uri: https://hub.zaikio.test/api/v1/machines/87669387-c02a-4588-b81d-d4910520dfe7/machine_ownership
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9iMTQ3NWY2NS0yMzZjLTU4YjgtOTZlMS1lMTc3OGI0M2JlYjciXSwianRpIjoiYWUwYjQwMDUtZDFlZC00YmY2LWFhYjAtODQzMDFiZDY0ODk1IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2RpcmVjdG9yeS5oYy50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYnVzaW5lc3NfcmVsYXRpb25zaGlwcy5ydyIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfbWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmNvbmZpZGVudGlhbF9zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3RvcnkuZGVsZWdhdGlvbnMucnciLCJkaXJlY3RvcnkubWFjaGluZV9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5Lm1hY2hpbmVzLnJ3IiwiZGlyZWN0b3J5Lm1hbnVmYWN0dXJlZF9tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciIsImRpcmVjdG9yeS5vcmdhbml6YXRpb25fbWVtYmVycy5yIiwiZGlyZWN0b3J5LnJlbW92ZV9tYWNoaW5lcy53IiwiZGlyZWN0b3J5LnJlbW92ZV9zb2Z0d2FyZS53IiwiZGlyZWN0b3J5LnJlbW92ZV9zcGVjaWFsaXN0cy53IiwiZGlyZWN0b3J5LnNpdGVzLnJ3IiwiZGlyZWN0b3J5LnNvZnR3YXJlLnJ3IiwiZGlyZWN0b3J5LnNwZWNpYWxpc3Rfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5zcGVjaWFsaXN0cy5ydyJdfQ.Ejpz-i8fafzarlgArU1PrifEiHAzPhByUw2bXpsjodC6dDZOiznZgOmDQg-YnXN2ksYbBeHvtaNrsd4qgHAnoP3T9_shDSslaSbBmvcqVLPcgBEvCirVaXjHMAM64oulpmsNvyWfNKcBCI-yB4jARgfOT3EGxT_x56FMRFsosvlY7kAeLd--ta53_kb5MxWvKy0fZ-6sLV44CKK74q4fmerjY-k8ZF4kdsPllX1KEGoa9m4p_FZaHqNKBg0CcITGBBwPMnzMsOzaxaW3o9-O-qm6CmPy_xrJb3B0VPm9DlEKlbKxhZqLSva-wbaUgTRXb_8jt2z8YyqnZSk93mUNng
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"24db1d8e6246695817a62b2f74498458"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 91b25f41-cecc-4a5d-9355-0d228bfd1bb3
+      X-Runtime:
+      - '0.537628'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 08 Feb 2021 09:39:18 GMT
+      Content-Length:
+      - '343'
+    body:
+      encoding: UTF-8
+      string: '{"id":"9ac58d45-fd0d-4c8d-8208-cddda317115c","organization_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","terminated_at":null,"asset_id":"87669387-c02a-4588-b81d-d4910520dfe7","asset_type":"Machine","site_id":null,"created_at":"2021-02-08T09:39:18.097Z","updated_at":"2021-02-08T09:39:18.097Z","machine_id":"87669387-c02a-4588-b81d-d4910520dfe7"}'
+  recorded_at: Mon, 08 Feb 2021 09:39:18 GMT
+recorded_with: VCR 6.0.0

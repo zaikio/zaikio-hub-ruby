@@ -92,6 +92,32 @@ Zaikio::Directory.with_token(token) do
 end
 ```
 
+### Use client object
+
+```rb
+# Organization JWT
+client = Zaikio::Directory::Client.from_token(org_token)
+
+client.organization.name
+client.sites.first.name
+machine = client.machines.create(
+  name: "Machine Name",
+  kind: "sheetfed_digital_press",
+  manufacturer: "My Manufacturer"
+)
+
+# Basic Auth
+client = Zaikio::Directory::Client.from_credentials(client_id, client_secret)
+client.organization # raises Error
+connection = client.connections.first
+client.test_accounts.create(
+  name: "My Test Org",
+  country_code: "DE",
+  kinds: ["printer"],
+  connection_attributes: ["procurement_consumer"]
+)
+```
+
 ### Other Use Cases
 
 ```rb
