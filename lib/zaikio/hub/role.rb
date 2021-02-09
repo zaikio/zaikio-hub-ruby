@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Role < Base
       uri "roles"
 

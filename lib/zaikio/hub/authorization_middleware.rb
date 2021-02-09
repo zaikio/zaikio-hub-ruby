@@ -3,7 +3,7 @@ require "jwt"
 require "concurrent"
 
 module Zaikio
-  module Directory
+  module Hub
     class AuthorizationMiddleware < Faraday::Middleware
       def self.token
         @token ||= Concurrent::ThreadLocalVar.new { nil }

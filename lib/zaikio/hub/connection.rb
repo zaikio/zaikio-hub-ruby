@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Connection < Base
       uri "connections(/:id)"
 

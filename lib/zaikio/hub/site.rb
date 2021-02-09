@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Site < Base
       uri "sites(/:id)"
       include_root_in_json :site

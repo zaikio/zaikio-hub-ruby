@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Organization < Base
       uri "person/organizations"
 
@@ -11,15 +11,15 @@ module Zaikio
                  :sections, :currency, :brand_color, :test_account_owner_id
 
       # Associations
-      has_many :memberships,             class_name: "Zaikio::Directory::Membership",
+      has_many :memberships,             class_name: "Zaikio::Hub::Membership",
                                          uri: "person/organizations/:organization_id/memberships"
-      has_many :software,                class_name: "Zaikio::Directory::Software",
+      has_many :software,                class_name: "Zaikio::Hub::Software",
                                          uri: "person/organizations/:organization_id/software"
-      has_many :machines,                class_name: "Zaikio::Directory::Machine",
+      has_many :machines,                class_name: "Zaikio::Hub::Machine",
                                          uri: "person/organizations/:organization_id/machines"
-      has_many :specialists,             class_name: "Zaikio::Directory::Specialist",
+      has_many :specialists,             class_name: "Zaikio::Hub::Specialist",
                                          uri: "person/organizations/:organization_id/specialists"
-      has_many :sites,                   class_name: "Zaikio::Directory::Site",
+      has_many :sites,                   class_name: "Zaikio::Hub::Site",
                                          uri: "person/organizations/:organization_id/sites"
     end
   end

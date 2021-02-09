@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class BusinessRelationship < Base
       uri "organization/business_relationships(/:id)"
 

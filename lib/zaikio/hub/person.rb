@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Person < Base
       # Attributes
       attributes :updated_at, :created_at, :first_name, :name, :full_name, :email,

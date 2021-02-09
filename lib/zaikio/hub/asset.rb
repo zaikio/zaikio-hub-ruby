@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     module Asset
       extend ActiveSupport::Concern
 
@@ -9,7 +9,7 @@ module Zaikio
       end
 
       def make_organization_owner
-        if Zaikio::Directory.current_token_data.subject_type == "Organization"
+        if Zaikio::Hub.current_token_data.subject_type == "Organization"
           self.class.request(:post,
                              "#{collection_name}/#{id}/#{singular_name}_ownership")
         else
@@ -20,7 +20,7 @@ module Zaikio
       end
 
       def destroy
-        if Zaikio::Directory.current_token_data.subject_type == "Organization"
+        if Zaikio::Hub.current_token_data.subject_type == "Organization"
           self.class.request(:delete,
                              "#{collection_name}/#{id}/#{singular_name}_ownership")
         else
@@ -31,7 +31,7 @@ module Zaikio
       end
 
       def specification
-        prefix = if Zaikio::Directory.current_token_data.subject_type == "Person"
+        prefix = if Zaikio::Hub.current_token_data.subject_type == "Person"
                    "person/organizations/#{owner_id || organization_id}/"
                  else
                    ""

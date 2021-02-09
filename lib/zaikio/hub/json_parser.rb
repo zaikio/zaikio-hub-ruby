@@ -1,7 +1,7 @@
 require "multi_json"
 
 module Zaikio
-  module Directory
+  module Hub
     class JSONParser < Faraday::Response::Middleware
       def on_complete(env)
         connection_error(env) unless /^(2\d\d)|422|404$/.match?(env.status.to_s)
@@ -12,8 +12,8 @@ module Zaikio
       end
 
       def connection_error(env)
-        Zaikio::Directory.configuration.logger
-                         .error("Zaikio::Directory Status Code #{env.status}, #{env.body}")
+        Zaikio::Hub.configuration.logger
+                   .error("Zaikio::Hub Status Code #{env.status}, #{env.body}")
         raise Spyke::ConnectionError, "Status Code #{env.status}, #{env.body}"
       end
 

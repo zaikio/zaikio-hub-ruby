@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class CurrentOrganization < Base
       self.primary_key = nil
 
@@ -21,17 +21,17 @@ module Zaikio
                  :sections, :currency, :brand_color, :test_account_owner_id
 
       # Associations
-      has_many :memberships,             class_name: "Zaikio::Directory::Membership",
+      has_many :memberships,             class_name: "Zaikio::Hub::Membership",
                                          uri: "organization/memberships(/:id)"
-      has_many :business_relationships,  class_name: "Zaikio::Directory::BusinessRelationship",
+      has_many :business_relationships,  class_name: "Zaikio::Hub::BusinessRelationship",
                                          uri: "organization/business_relationships(/:id)"
-      has_many :software,                class_name: "Zaikio::Directory::Software",
+      has_many :software,                class_name: "Zaikio::Hub::Software",
                                          uri: "software(/:id)"
-      has_many :machines,                class_name: "Zaikio::Directory::Machine",
+      has_many :machines,                class_name: "Zaikio::Hub::Machine",
                                          uri: "machines(/:id)"
-      has_many :specialists,             class_name: "Zaikio::Directory::Specialist",
+      has_many :specialists,             class_name: "Zaikio::Hub::Specialist",
                                          uri: "specialists(/:id)"
-      has_many :sites,                   class_name: "Zaikio::Directory::Site",
+      has_many :sites,                   class_name: "Zaikio::Hub::Site",
                                          uri: "sites(/:id)"
 
       def fetch

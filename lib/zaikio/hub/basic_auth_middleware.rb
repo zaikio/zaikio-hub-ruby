@@ -2,7 +2,7 @@ require "faraday"
 require "base64"
 
 module Zaikio
-  module Directory
+  module Hub
     class BasicAuthMiddleware < Faraday::Middleware
       class_attribute :credentials
 

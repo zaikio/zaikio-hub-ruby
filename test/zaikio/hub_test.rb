@@ -1,8 +1,8 @@
 require "test_helper"
 
-class Zaikio::Directory::Test < ActiveSupport::TestCase
+class Zaikio::Hub::Test < ActiveSupport::TestCase
   def setup
-    Zaikio::Directory.configure do |config|
+    Zaikio::Hub.configure do |config|
       config.environment = :test
     end
   end
@@ -37,28 +37,28 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "is a module" do
-    assert_kind_of Module, Zaikio::Directory
+    assert_kind_of Module, Zaikio::Hub
   end
 
   test "has version number" do
-    assert_not_nil ::Zaikio::Directory::VERSION
+    assert_not_nil ::Zaikio::Hub::VERSION
   end
 
   test "it is configurable" do
-    Zaikio::Directory.configure do |config|
+    Zaikio::Hub.configure do |config|
       config.environment = :test
     end
 
-    assert_equal :test, Zaikio::Directory.configuration.environment
+    assert_equal :test, Zaikio::Hub.configuration.environment
   end
 
   test "makes calls as person" do
     host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_person") do
-      Zaikio::Directory.with_token(token) do
+      Zaikio::Hub.with_token(token) do
         assert_equal "Person/383663bc-149a-5b76-b50d-ee039046c12e",
-                     Zaikio::Directory.current_token_data.audience
-        person = Zaikio::Directory::CurrentPerson.new
+                     Zaikio::Hub.current_token_data.audience
+        person = Zaikio::Hub::CurrentPerson.new
         person.fetch
         assert_equal "Frank Gallikanokus", person.full_name
         assert_equal "Bounty Soap Inc.", person.admin_organizations.first.name
@@ -101,7 +101,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
                            JSON.parse(req.body)["site"]["name"] == "A new cool name"
                          end
         assert_equal "383663bc-149a-5b76-b50d-ee039046c12e",
-                     Zaikio::Directory.current_token_data.subject_id
+                     Zaikio::Hub.current_token_data.subject_id
       end
     end
   end
@@ -109,8 +109,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   test "makes calls as organization" do
     host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_organization", record: :new_episodes) do
-      Zaikio::Directory.with_token(org_token) do
-        organization = Zaikio::Directory::CurrentOrganization.new
+      Zaikio::Hub.with_token(org_token) do
+        organization = Zaikio::Hub::CurrentOrganization.new
         machine_data = {
           name: "My Machine",
           kind: "sheetfed_digital_press",
@@ -138,7 +138,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
                          times: 1
         assert_equal "Frank Gallikanokus", organization.members.first.full_name
 
-        organization = Zaikio::Directory::CurrentOrganization.new
+        organization = Zaikio::Hub::CurrentOrganization.new
         machine2 = organization.machines.find("55a37c0f-c2c5-531c-be8c-8e012a938fc5")
         assert_equal "55a37c0f-c2c5-531c-be8c-8e012a938fc5", machine2.id
         assert_equal({ "capabilities" => [] }, machine2.specification)
@@ -148,7 +148,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "fetches roles" do
     VCR.use_cassette("roles") do
-      roles = Zaikio::Directory::Role.where(lang: "de")
+      roles = Zaikio::Hub::Role.where(lang: "de")
       owner_role = roles.to_a.find { |r| r.id == "owner" }
       assert_equal "Eigentümer", owner_role.name
     end
@@ -157,8 +157,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   test "fetches specialists" do
     host = "https://hub.zaikio.test/api/v1"
     VCR.use_cassette("current_organization_specialists") do
-      Zaikio::Directory.with_token(org_token_specialists) do
-        organization = Zaikio::Directory::CurrentOrganization.new
+      Zaikio::Hub.with_token(org_token_specialists) do
+        organization = Zaikio::Hub::CurrentOrganization.new
         specialist_data = {
           name: "My Specialist",
           kind: "boxing"
@@ -180,8 +180,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "fetches connections" do
     VCR.use_cassette("connections") do
-      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
-        connections = Zaikio::Directory::Connection.all
+      Zaikio::Hub.with_basic_auth(client_id, client_secret) do
+        connections = Zaikio::Hub::Connection.all
         assert_equal 3, connections.size
         assert_equal "Person", connections.first.connectable_type
         assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connections.first.connectable_id
@@ -193,15 +193,15 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "fetches subscriptions" do
     VCR.use_cassette("subscriptions") do
-      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
-        subscriptions = Zaikio::Directory::Subscription.all
+      Zaikio::Hub.with_basic_auth(client_id, client_secret) do
+        subscriptions = Zaikio::Hub::Subscription.all
         assert_equal 1, subscriptions.size
         subscription = subscriptions.first
         assert_equal "Organization", subscription.subscriber_type
         assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.subscriber_id
         assert_equal "Organization-b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.id
 
-        subscription = Zaikio::Directory::Subscription
+        subscription = Zaikio::Hub::Subscription
                        .find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
         assert_equal "Organization", subscription.subscriber_type
         assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.subscriber_id
@@ -215,15 +215,15 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "creates test accounts" do
     VCR.use_cassette("test_accounts") do
-      Zaikio::Directory.with_basic_auth(client_id, client_secret) do
-        Zaikio::Directory::TestAccount.create(
+      Zaikio::Hub.with_basic_auth(client_id, client_secret) do
+        Zaikio::Hub::TestAccount.create(
           name: "My Test Org",
           country_code: "DE",
           kinds: ["printer"],
           connection_attributes: ["procurement_consumer"]
         )
 
-        test_accounts = Zaikio::Directory::TestAccount.all
+        test_accounts = Zaikio::Hub::TestAccount.all
 
         assert_equal 1, test_accounts.size
         assert_equal "My Test Org", test_accounts.first.name
@@ -233,7 +233,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "uses zaikio client from token" do
     VCR.use_cassette("client_requests_organization") do
-      client = Zaikio::Directory::Client.from_token(org_token)
+      client = Zaikio::Hub::Client.from_token(org_token)
 
       assert_equal "Bounty Soap Inc.", client.organization.name
       assert_equal "Black Mesa Research Facility", client.sites.first.name
@@ -248,7 +248,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
 
   test "uses zaikio client from credentials" do
     VCR.use_cassette("client_requests_credentials") do
-      client = Zaikio::Directory::Client.from_credentials(client_id, client_secret)
+      client = Zaikio::Hub::Client.from_credentials(client_id, client_secret)
 
       assert_raise do
         client.organization
@@ -270,7 +270,7 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
   end
 
   test "respects attributes" do
-    organization = Zaikio::Directory::Organization.new
+    organization = Zaikio::Hub::Organization.new
 
     assert_nil organization.id
     assert_nil organization.name
@@ -305,9 +305,9 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
       )
       .to_return(status: 403, body: "", headers: {})
 
-    Zaikio::Directory.with_token(token) do
-      person = Zaikio::Directory::CurrentPerson
-               .find_with_fallback(Zaikio::Directory::CurrentPerson.new(full_name: "Hello World"))
+    Zaikio::Hub.with_token(token) do
+      person = Zaikio::Hub::CurrentPerson
+               .find_with_fallback(Zaikio::Hub::CurrentPerson.new(full_name: "Hello World"))
 
       assert_equal "Hello World", person.full_name
 
@@ -316,8 +316,8 @@ class Zaikio::Directory::Test < ActiveSupport::TestCase
       assert_equal [], person.organizations
     end
 
-    Zaikio::Directory.with_token(org_token) do
-      organization = Zaikio::Directory::CurrentOrganization.new
+    Zaikio::Hub.with_token(org_token) do
+      organization = Zaikio::Hub::CurrentOrganization.new
 
       assert_raise Zaikio::ResourceNotFound do
         organization.machines.find("machine-id")
