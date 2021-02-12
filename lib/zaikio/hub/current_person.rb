@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class CurrentPerson < Base
       self.primary_key = nil
       include_root_in_json :person
@@ -21,7 +21,7 @@ module Zaikio
       end
 
       # Associations
-      has_many :organization_memberships, class_name: "Zaikio::Directory::OrganizationMembership",
+      has_many :organization_memberships, class_name: "Zaikio::Hub::OrganizationMembership",
                                           uri: nil
 
       def fetch

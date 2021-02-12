@@ -1,7 +1,7 @@
 require "logger"
 
 module Zaikio
-  module Directory
+  module Hub
     class Configuration
       HOSTS = {
         development: "https://hub.zaikio.test",
@@ -32,7 +32,7 @@ module Zaikio
 
       def host_for(environment)
         HOSTS.fetch(environment) do
-          raise StandardError.new, "Invalid Zaikio::Directory environment '#{environment}'"
+          raise StandardError.new, "Invalid Zaikio::Hub environment '#{environment}'"
         end
       end
     end

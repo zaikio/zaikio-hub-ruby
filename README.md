@@ -1,13 +1,13 @@
-# Zaikio::Directory
+# Zaikio::Hub
 
-Ruby API Client for Zaikio's Directory.
+Ruby API Client for Zaikio's Hub.
 
 ## Installation
 
 ### 1. Add this line to your application's Gemfile:
 
 ```ruby
-gem 'zaikio-directory'
+gem 'zaikio-hub'
 ```
 
 And then execute:
@@ -17,15 +17,15 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install zaikio-directory
+$ gem install zaikio-hub
 ```
 
 ### 2. Configure the gem:
 
 ```rb
-# config/initializers/zaikio_directory.rb
+# config/initializers/zaikio_hub.rb
 
-Zaikio::Directory.configure do |config|
+Zaikio::Hub.configure do |config|
   config.environment = :production # sandbox or production
 end
 ```
@@ -33,7 +33,7 @@ end
 
 ## Usage
 
-The Directory Client has an ORM like design. However, we distinguish between the contexts of the organization and the person.
+The Hub Client has an ORM like design. However, we distinguish between the contexts of the organization and the person.
 
 For the requests to work, a valid JSON Web token with the correct OAuth Scopes must always be provided. Please refer to [zakio-oauth_client](https://github.com/zaikio/zaikio-oauth_client).
 
@@ -43,8 +43,8 @@ If you want to know which actions are available and which scopes are required, p
 
 ```rb
 token = "..." # Your valid JWT for an organization
-Zaikio::Directory.with_token(token) do
-  organization = Zaikio::Directory::CurrentOrganization.new
+Zaikio::Hub.with_token(token) do
+  organization = Zaikio::Hub::CurrentOrganization.new
 
   # Fetch Data
   organization.memberships.find('abc')
@@ -74,8 +74,8 @@ end
 
 ```rb
 token = "..." # Your valid JWT for a person
-Zaikio::Directory.with_token(token) do
-  person = Zaikio::Directory::CurrentPerson.new
+Zaikio::Hub.with_token(token) do
+  person = Zaikio::Hub::CurrentPerson.new
 
   # Fetch Data
   person.organizations
@@ -96,7 +96,7 @@ end
 
 ```rb
 # Organization JWT
-client = Zaikio::Directory::Client.from_token(org_token)
+client = Zaikio::Hub::Client.from_token(org_token)
 
 client.organization.name
 client.sites.first.name
@@ -107,7 +107,7 @@ machine = client.machines.create(
 )
 
 # Basic Auth
-client = Zaikio::Directory::Client.from_credentials(client_id, client_secret)
+client = Zaikio::Hub::Client.from_credentials(client_id, client_secret)
 client.organization # raises Error
 connection = client.connections.first
 client.test_accounts.create(
@@ -121,16 +121,16 @@ client.test_accounts.create(
 ### Other Use Cases
 
 ```rb
-Zaikio::Directory.with_basic_auth(client_id, client_secret) do
-  connections = Zaikio::Directory::Connection.all
-  subscription = Zaikio::Directory::Subscription.find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
+Zaikio::Hub.with_basic_auth(client_id, client_secret) do
+  connections = Zaikio::Hub::Connection.all
+  subscription = Zaikio::Hub::Subscription.find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
   subscription.plan # => "advanced"
   subscription.activate!
   subscription.increment_usage_by!(:orders_created, 12)
 end
 
-Zaikio::Directory.with_basic_auth(client_id, client_secret) do
-  Zaikio::Directory::TestAccount.create(
+Zaikio::Hub.with_basic_auth(client_id, client_secret) do
+  Zaikio::Hub::TestAccount.create(
     name: "My Test Org",
     country_code: "DE",
     kinds: ["printer"],
@@ -138,11 +138,11 @@ Zaikio::Directory.with_basic_auth(client_id, client_secret) do
   )
 end
 
-roles = Zaikio::Directory::Role.all
-revoked_access_tokens = Zaikio::Directory::RevokedAccessToken.all
+roles = Zaikio::Hub::Role.all
+revoked_access_tokens = Zaikio::Hub::RevokedAccessToken.all
 
-Zaikio::Directory.with_token(token) do
-  Zaikio::Directory::RevokedAccessToken.create
+Zaikio::Hub.with_token(token) do
+  Zaikio::Hub::RevokedAccessToken.create
 end
 ```
 
@@ -153,24 +153,24 @@ If an unexpected error occurs with an API call (i.e. an error that has no status
 This can be easily caught using the `with_fallback` method. We recommend to always work with fallbacks.
 
 ```rb
-Zaikio::Directory.with_token(token) do
-  person = Zaikio::Directory::CurrentPerson
-           .find_with_fallback(Zaikio::Directory::CurrentPerson.new(full_name: "Hello World"))
+Zaikio::Hub.with_token(token) do
+  person = Zaikio::Hub::CurrentPerson
+           .find_with_fallback(Zaikio::Hub::CurrentPerson.new(full_name: "Hello World"))
 
   person.organizations # Automatically uses empty array as fallback
 end
 
-Zaikio::Directory.with_token(token) do
-  organization = Zaikio::Directory::CurrentOrganization.new
+Zaikio::Hub.with_token(token) do
+  organization = Zaikio::Hub::CurrentOrganization.new
 
   organization.machines.with_fallback.all
   organization.machines
-    .with_fallback(Zaikio::Directory::Machine.new(name: 'My Machine'))
+    .with_fallback(Zaikio::Hub::Machine.new(name: 'My Machine'))
     .find('machine-id')
 
 
   organization.machines
-    .with_fallback(Zaikio::Directory::Machine.new(name: 'My Machine'))
+    .with_fallback(Zaikio::Hub::Machine.new(name: 'My Machine'))
     .find('machine-does-not-exist') # => raises Zaikio::ResourceNotFound
 
   begin

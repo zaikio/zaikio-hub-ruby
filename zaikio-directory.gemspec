@@ -1,19 +1,19 @@
 $LOAD_PATH.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "zaikio/directory/version"
+require "zaikio/hub/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "zaikio-directory"
-  spec.version     = Zaikio::Directory::VERSION
+  spec.name        = "zaikio-hub"
+  spec.version     = Zaikio::Hub::VERSION
   spec.authors     = ["crispymtn", "Jalyna Schröder", "Martin Spickermann"]
   spec.email       = ["op@crispymtn.com", "js@crispymtn.com", "spickermann@gmail.com"]
   spec.homepage    = "https://www.zaikio.com/"
-  spec.summary     = "Ruby API Client for Zaikio's Directory"
-  spec.description = "Ruby API Client for Zaikio's Directory"
+  spec.summary     = "Ruby API Client for Zaikio's Hub"
+  spec.description = "Ruby API Client for Zaikio's Hub"
   spec.license     = "MIT"
-  spec.metadata["changelog_uri"] = "https://github.com/zaikio/zaikio-directory-ruby/blob/master/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = "https://github.com/zaikio/zaikio-hub-ruby/blob/master/CHANGELOG.md"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md",
                    "CHANGELOG.md"]

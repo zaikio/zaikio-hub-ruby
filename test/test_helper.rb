@@ -5,7 +5,7 @@ require "minitest/autorun"
 require "mocha/minitest"
 require "vcr"
 require "webmock/minitest"
-require "zaikio/directory"
+require "zaikio/hub"
 
 # Filter out the backtrace from minitest while preserving the one from other libraries.
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new

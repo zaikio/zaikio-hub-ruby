@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class TestAccount < Base
       uri "test_accounts(/:id)"
 
@@ -13,9 +13,9 @@ module Zaikio
                  :subscription_attributes, :connection_attributes
 
       # Associations
-      has_many :memberships, class_name: "Zaikio::Directory::Membership",
+      has_many :memberships, class_name: "Zaikio::Hub::Membership",
                              uri: nil
-      has_many :sites, class_name: "Zaikio::Directory::Site",
+      has_many :sites, class_name: "Zaikio::Hub::Site",
                        uri: nil
     end
   end

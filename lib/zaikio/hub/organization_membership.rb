@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class OrganizationMembership < Base
       uri "person/organization_memberships"
 
@@ -9,7 +9,7 @@ module Zaikio
       attributes :updated_at, :created_at, :roles
 
       # Associations
-      has_one :organization, class_name: "Zaikio::Directory::Organization"
+      has_one :organization, class_name: "Zaikio::Hub::Organization"
     end
   end
 end

@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Membership < Base
       uri "organization/memberships(/:id)"
       include_root_in_json :membership
@@ -8,7 +8,7 @@ module Zaikio
       attributes :updated_at, :created_at, :roles
 
       # Associations
-      has_one :person, uri: nil, class_name: "Zaikio::Directory::Person"
+      has_one :person, uri: nil, class_name: "Zaikio::Hub::Person"
     end
   end
 end

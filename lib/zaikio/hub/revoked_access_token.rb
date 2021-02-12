@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class RevokedAccessToken < Base
       uri "revoked_access_tokens"
     end

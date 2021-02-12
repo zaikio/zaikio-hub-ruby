@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class Machine < Base
       include Asset
 

@@ -1,5 +1,5 @@
 module Zaikio
-  module Directory
+  module Hub
     class RequestWrapper
       def initialize(result, client)
         @result = result
@@ -42,7 +42,7 @@ module Zaikio
         @jwt ||= begin
           payload = JWT.decode(@token, nil, false).first
 
-          Zaikio::Directory.create_token_data(payload)
+          Zaikio::Hub.create_token_data(payload)
         end
       end
 
@@ -60,48 +60,48 @@ module Zaikio
 
       def subject_class
         if organization?
-          Zaikio::Directory::CurrentOrganization
+          Zaikio::Hub::CurrentOrganization
         elsif person?
-          Zaikio::Directory::CurrentPerson
+          Zaikio::Hub::CurrentPerson
         end
       end
 
       def with_auth(&block)
         if @token.nil?
-          Zaikio::Directory.with_basic_auth(@client_id, @client_secret, &block)
+          Zaikio::Hub.with_basic_auth(@client_id, @client_secret, &block)
         else
-          Zaikio::Directory.with_token(@token, &block)
+          Zaikio::Hub.with_token(@token, &block)
         end
       end
 
       def organization
         raise "Current organization is not available for person" unless organization?
 
-        with_auth { Zaikio::Directory::CurrentOrganization.find }
+        with_auth { Zaikio::Hub::CurrentOrganization.find }
       end
 
       def person
         raise "Current person is not available for organization" unless person?
 
-        with_auth { Zaikio::Directory::CurrentPerson.find }
+        with_auth { Zaikio::Hub::CurrentPerson.find }
       end
 
       def connections
         raise "Only available with credentials" unless credentials?
 
-        RequestWrapper.new(Zaikio::Directory::Connection.all, self)
+        RequestWrapper.new(Zaikio::Hub::Connection.all, self)
       end
 
       def subscriptions
         raise "Only available with credentials" unless credentials?
 
-        RequestWrapper.new(Zaikio::Directory::Subscription.all, self)
+        RequestWrapper.new(Zaikio::Hub::Subscription.all, self)
       end
 
       def test_accounts
         raise "Only available with credentials" unless credentials?
 
-        RequestWrapper.new(Zaikio::Directory::TestAccount.all, self)
+        RequestWrapper.new(Zaikio::Hub::TestAccount.all, self)
       end
 
       def respond_to_missing?(method_name, include_private = false)
