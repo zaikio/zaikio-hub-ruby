@@ -68,7 +68,7 @@ module Zaikio
         self.connection = Faraday.new(url: "#{configuration.host}/api/v1",
                                       ssl: { verify: configuration.environment != :test }) do |c|
           c.request     :json
-          c.response    :logger, configuration&.logger
+          c.response    :logger, configuration&.logger, headers: false
           c.use         JSONParser
           c.use         AuthorizationMiddleware
           c.use         BasicAuthMiddleware
