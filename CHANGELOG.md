@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 * Only log Faraday req/response status lines, not headers
+* Added nested attributes for `address_attributes` in `Site`
 
 ## [0.3.0] - 2020-02-12
 
