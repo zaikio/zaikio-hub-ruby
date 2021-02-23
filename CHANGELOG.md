@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-02-23
+
 ### Changed
 
 * Only log Faraday req/response status lines, not headers
@@ -38,7 +40,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added subscriptions (migration required)
 
-[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.2.0...v.0.3.0
 [0.2.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.1.1...v.0.2.0
 [0.1.1]: https://github.com/zaikio/zaikio-hub-ruby/compare/5c6cb4dbcac316733560ddb2b1e13b53e55eb66e...v0.1.1
