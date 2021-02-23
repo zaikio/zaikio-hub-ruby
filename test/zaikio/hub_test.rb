@@ -1,4 +1,5 @@
 require "test_helper"
+require "action_controller"
 
 class Zaikio::Hub::Test < ActiveSupport::TestCase
   def setup
@@ -142,6 +143,32 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         machine2 = organization.machines.find("55a37c0f-c2c5-531c-be8c-8e012a938fc5")
         assert_equal "55a37c0f-c2c5-531c-be8c-8e012a938fc5", machine2.id
         assert_equal({ "capabilities" => [] }, machine2.specification)
+      end
+    end
+  end
+
+  test "creates site with address" do
+    VCR.use_cassette("create_site", record: :new_episodes) do
+      Zaikio::Hub.with_token(org_token) do
+        organization = Zaikio::Hub::CurrentOrganization.new
+        site = organization.sites.new(ActionController::Parameters.new(
+          "name" => "Another Site",
+          "address_attributes" => {
+            "addition" => "2nd Floor",
+            "addressee" => "Janine Lane",
+            "country_code" => "DE",
+            "street_and_number" => "SomeStreet 12",
+            "town" => "Berlin",
+            "zip_code" => "10115"
+          }
+        ).permit!)
+
+        site.save
+
+        assert_equal "Another Site", site.name
+        assert_equal "2nd Floor", site.address["addition"]
+        assert_equal "SomeStreet 12", site.address["street"]
+        assert_not_nil site.address["id"]
       end
     end
   end
