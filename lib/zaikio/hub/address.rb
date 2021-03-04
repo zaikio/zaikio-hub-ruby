@@ -2,8 +2,14 @@ module Zaikio
   module Hub
     class Address < Base
       # Attributes
-      attributes :addressee, :text, :country_code, :town,
-                 :street_and_number, :zip_code, :addition
+      attributes :addressee,
+                 :addition,
+                 :country_code,
+                 :state,
+                 :street_and_number,
+                 :text,
+                 :town,
+                 :zip_code
 
       # Associations
       belongs_to :site, uri: nil, class_name: "Zaikio::Hub::Site"
