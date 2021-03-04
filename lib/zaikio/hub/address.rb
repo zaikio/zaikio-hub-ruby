@@ -5,6 +5,7 @@ module Zaikio
       attributes :addressee,
                  :addition,
                  :country_code,
+                 :state,
                  :street_and_number,
                  :text,
                  :town,
