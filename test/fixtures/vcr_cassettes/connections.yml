@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.0.1
+      - Faraday v1.3.0
       Authorization:
       - Basic ZGE2MzMzZmMtMTlhYi01MWQ3LTgyOTUtNDkwNDM1OGM1ZWNiOmU0MTVhOThiNzJmMGI0OGY1NTRkZTc1NzU2ZjMxNzgw
       Accept-Encoding:
@@ -24,10 +24,19 @@ http_interactions:
       - max-age=0, private, must-revalidate
       Content-Type:
       - application/json; charset=utf-8
+      Current-Page:
+      - '1'
       Etag:
-      - W/"f181e570789387368a17beac31104775"
+      - W/"17efbc91cb56a81028f31ce0d4330d0b"
+      Link:
+      - <https://hub.zaikio.test/api/v1/connections?page=1>; rel="first", <https://hub.zaikio.test/api/v1/connections?page=1>;
+        rel="last"
       Referrer-Policy:
       - strict-origin-when-cross-origin
+      Total-Count:
+      - '3'
+      Total-Pages:
+      - '1'
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -39,18 +48,17 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - 644acaf8-1c3c-45ec-bb4b-cd5f57ac0706
+      - a9a829ed-a7a3-4161-b435-fd380bad629e
       X-Runtime:
-      - '0.120672'
+      - '1.040547'
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Wed, 08 Apr 2020 07:25:55 GMT
+      - Tue, 06 Apr 2021 12:09:08 GMT
       Content-Length:
-      - '825'
+      - '987'
     body:
       encoding: UTF-8
-      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":["accounting.invoice_billed","warehouse.item_moved"],"granted_oauth_scopes":["directory.person.r","warehouse.items.r"]},{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":["warehouse.item_moved"],"granted_oauth_scopes":["directory.person.r"]},{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2020-03-24T08:38:15.830Z","updated_at":"2020-03-24T08:38:15.830Z","granted_events":[],"granted_oauth_scopes":["directory.machines.rw","directory.organization.r"]}]'
-    http_version: null
-  recorded_at: Wed, 08 Apr 2020 07:25:55 GMT
-recorded_with: VCR 5.1.0
+      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r","warehouse.items.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.machines.rw","directory.organization.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
+  recorded_at: Tue, 06 Apr 2021 12:09:08 GMT
+recorded_with: VCR 6.0.0

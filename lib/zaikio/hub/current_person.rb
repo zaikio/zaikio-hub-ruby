@@ -10,7 +10,8 @@ module Zaikio
                  :pronoun, :locale, :country_code, :currency, :unit_system, :connected,
                  :test_account_owner_id, :time_zone, :email_confirmed,
                  :two_factor_authentication_enabled, :avatar_url, :subscription,
-                 :accessible_apps
+                 :accessible_apps, :granted_oauth_scopes, :requested_oauth_scopes,
+                 :requested_oauth_scopes_waiting_for_approval
 
       def self.find
         all.find_one
