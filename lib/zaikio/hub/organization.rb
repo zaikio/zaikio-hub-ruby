@@ -8,7 +8,9 @@ module Zaikio
       # Attributes
       attributes :name, :slug, :logo_url, :connected, :subscription,
                  :created_at, :updated_at, :country_code, :kinds,
-                 :sections, :currency, :brand_color, :test_account_owner_id
+                 :sections, :currency, :brand_color, :test_account_owner_id,
+                 :granted_oauth_scopes, :requested_oauth_scopes,
+                 :requested_oauth_scopes_waiting_for_approval
 
       # Associations
       has_many :memberships,             class_name: "Zaikio::Hub::Membership",

@@ -8,7 +8,7 @@ http_interactions:
       string: '{"specialist":{"current_organization_id":null,"name":"My Specialist","kind":"boxing"}}'
     headers:
       User-Agent:
-      - Faraday v1.0.1
+      - Faraday v1.3.0
       Content-Type:
       - application/json
       Authorization:
@@ -27,7 +27,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"6071301c3a9ef971d9c8ff6c71155213"
+      - W/"4b6353549b55304e6ca2cdce9310b27e"
       Referrer-Policy:
       - strict-origin-when-cross-origin
       Vary:
@@ -41,29 +41,28 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - eb28991c-e64c-4d46-a754-8697fe137ac6
+      - 0fbd5a94-f6f6-4c64-8ff4-15cb6fcdfc2c
       X-Runtime:
-      - '0.013128'
+      - '0.040258'
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Fri, 15 May 2020 14:17:25 GMT
+      - Tue, 06 Apr 2021 12:19:26 GMT
       Content-Length:
       - '195'
     body:
       encoding: UTF-8
-      string: '{"id":"b4fe48db-114a-46dd-9246-1ccc799e30de","name":"My Specialist","kind":"boxing","site_id":null,"created_at":"2020-05-15T14:17:25.827Z","updated_at":"2020-05-15T14:17:25.827Z","owner_id":null}'
-    http_version: null
-  recorded_at: Fri, 15 May 2020 14:17:25 GMT
+      string: '{"id":"7c642aef-c622-42e2-a030-42ee70f9d040","name":"My Specialist","kind":"boxing","site_id":null,"created_at":"2021-04-06T12:19:26.428Z","updated_at":"2021-04-06T12:19:26.428Z","owner_id":null}'
+  recorded_at: Tue, 06 Apr 2021 12:19:26 GMT
 - request:
     method: post
-    uri: https://hub.zaikio.test/api/v1/specialists/b4fe48db-114a-46dd-9246-1ccc799e30de/specialist_ownership
+    uri: https://hub.zaikio.test/api/v1/specialists/7c642aef-c622-42e2-a030-42ee70f9d040/specialist_ownership
     body:
       encoding: UTF-8
       string: "{}"
     headers:
       User-Agent:
-      - Faraday v1.0.1
+      - Faraday v1.3.0
       Content-Type:
       - application/json
       Authorization:
@@ -82,7 +81,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b56e10079566cb75cc8e058fa4624788"
+      - W/"fee6b234b1691849662a095b1c314afb"
       Referrer-Policy:
       - strict-origin-when-cross-origin
       Vary:
@@ -96,18 +95,17 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - f8f4f992-d4b5-4da3-b553-f05931fb952d
+      - 467d3ad7-a362-42e3-8c50-e433b269a66c
       X-Runtime:
-      - '0.035391'
+      - '0.019119'
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Fri, 15 May 2020 14:17:25 GMT
+      - Tue, 06 Apr 2021 12:19:26 GMT
       Content-Length:
       - '294'
     body:
       encoding: UTF-8
-      string: '{"id":"c012d0e6-9bdf-41ab-ab06-76f9695fd352","organization_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","terminated_at":null,"asset_id":"b4fe48db-114a-46dd-9246-1ccc799e30de","asset_type":"Specialist","site_id":null,"created_at":"2020-05-15T14:17:25.865Z","updated_at":"2020-05-15T14:17:25.865Z"}'
-    http_version: null
-  recorded_at: Fri, 15 May 2020 14:17:25 GMT
-recorded_with: VCR 5.1.0
+      string: '{"id":"273e6501-044f-4494-bc98-55a79a3578c9","organization_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","terminated_at":null,"asset_id":"7c642aef-c622-42e2-a030-42ee70f9d040","asset_type":"Specialist","site_id":null,"created_at":"2021-04-06T12:19:26.456Z","updated_at":"2021-04-06T12:19:26.456Z"}'
+  recorded_at: Tue, 06 Apr 2021 12:19:26 GMT
+recorded_with: VCR 6.0.0

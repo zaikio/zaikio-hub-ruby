@@ -7,7 +7,8 @@ module Zaikio
 
       # Attributes
       attributes :updated_at, :created_at, :connectable_type, :connectable_id,
-                 :app_name, :granted_oauth_scopes
+                 :app_name, :granted_oauth_scopes, :requested_oauth_scopes,
+                 :requested_oauth_scopes_waiting_for_approval
 
       def initialize(attributes = {})
         if attributes["connectable_id"]

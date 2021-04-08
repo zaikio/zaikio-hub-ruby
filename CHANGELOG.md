@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Added `granted_oauth_scopes`, `requested_oauth_scopes`, and `requested_oauth_scopes_waiting_for_approval` to Person and Organization
+* Added `requested_oauth_scopes`, and `requested_oauth_scopes_waiting_for_approval` to Connection
+
 ## [0.4.1] - 2020-03-04
 
 * Add `state` property for `Zaikio::Hub::Address` model
