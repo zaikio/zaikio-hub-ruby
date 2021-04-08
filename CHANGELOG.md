@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2020-04-08
+
 * Added `granted_oauth_scopes`, `requested_oauth_scopes`, and `requested_oauth_scopes_waiting_for_approval` to Person and Organization
 * Added `requested_oauth_scopes`, and `requested_oauth_scopes_waiting_for_approval` to Connection
 
@@ -47,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added subscriptions (migration required)
 
-[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.4.1...HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.5.0..HEAD
+[0.5.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.4.1..v0.5.0
 [0.4.1]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.2.0...v.0.3.0
