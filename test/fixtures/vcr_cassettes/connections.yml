@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://hub.zaikio.test/api/v1/connections
+    uri: https://hub.zaikio.test/api/v1/connections?per_page=1
     body:
       encoding: US-ASCII
       string: ''
@@ -27,16 +27,17 @@ http_interactions:
       Current-Page:
       - '1'
       Etag:
-      - W/"17efbc91cb56a81028f31ce0d4330d0b"
+      - W/"0753a9b1a345880e30dd8ee4d2df3409"
       Link:
-      - <https://hub.zaikio.test/api/v1/connections?page=1>; rel="first", <https://hub.zaikio.test/api/v1/connections?page=1>;
-        rel="last"
+      - <https://hub.zaikio.test/api/v1/connections?per_page=1&page=1>; rel="first",
+        <https://hub.zaikio.test/api/v1/connections?per_page=1&page=2>; rel="next",
+        <https://hub.zaikio.test/api/v1/connections?per_page=1&page=3>; rel="last"
       Referrer-Policy:
       - strict-origin-when-cross-origin
       Total-Count:
       - '3'
       Total-Pages:
-      - '1'
+      - '3'
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -48,17 +49,142 @@ http_interactions:
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Request-Id:
-      - a9a829ed-a7a3-4161-b435-fd380bad629e
+      - 2859a4c4-c2d2-4cf6-894a-d1e35676db69
       X-Runtime:
-      - '1.040547'
+      - '0.829469'
       X-Xss-Protection:
       - 1; mode=block
       Date:
-      - Tue, 06 Apr 2021 12:09:08 GMT
+      - Mon, 12 Apr 2021 10:12:34 GMT
       Content-Length:
-      - '987'
+      - '331'
     body:
       encoding: UTF-8
-      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r","warehouse.items.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2021-04-06T12:08:40.335Z","updated_at":"2021-04-06T12:08:40.335Z","app_name":"keyline","granted_oauth_scopes":["directory.machines.rw","directory.organization.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
-  recorded_at: Tue, 06 Apr 2021 12:09:08 GMT
+      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2021-04-12T10:07:07.928Z","updated_at":"2021-04-12T10:07:07.928Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r","warehouse.items.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
+  recorded_at: Mon, 12 Apr 2021 10:12:34 GMT
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/connections?page=2&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Basic ZGE2MzMzZmMtMTlhYi01MWQ3LTgyOTUtNDkwNDM1OGM1ZWNiOmU0MTVhOThiNzJmMGI0OGY1NTRkZTc1NzU2ZjMxNzgw
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Current-Page:
+      - '2'
+      Etag:
+      - W/"d6dec8919398738781848cf6821c286b"
+      Link:
+      - <https://hub.zaikio.test/api/v1/connections?page=1&per_page=1>; rel="first",
+        <https://hub.zaikio.test/api/v1/connections?page=1&per_page=1>; rel="prev",
+        <https://hub.zaikio.test/api/v1/connections?page=3&per_page=1>; rel="next",
+        <https://hub.zaikio.test/api/v1/connections?page=3&per_page=1>; rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Total-Count:
+      - '3'
+      Total-Pages:
+      - '3'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 6ab55a17-9cd1-464c-99ca-62d67902bce7
+      X-Runtime:
+      - '0.021092'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 12 Apr 2021 10:12:34 GMT
+      Content-Length:
+      - '311'
+    body:
+      encoding: UTF-8
+      string: '[{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2021-04-12T10:07:07.928Z","updated_at":"2021-04-12T10:07:07.928Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
+  recorded_at: Mon, 12 Apr 2021 10:12:34 GMT
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/connections?page=3&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.3.0
+      Authorization:
+      - Basic ZGE2MzMzZmMtMTlhYi01MWQ3LTgyOTUtNDkwNDM1OGM1ZWNiOmU0MTVhOThiNzJmMGI0OGY1NTRkZTc1NzU2ZjMxNzgw
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Current-Page:
+      - '3'
+      Etag:
+      - W/"bba67c14e009b38b6e9637fbe00882db"
+      Link:
+      - <https://hub.zaikio.test/api/v1/connections?page=1&per_page=1>; rel="first",
+        <https://hub.zaikio.test/api/v1/connections?page=2&per_page=1>; rel="prev",
+        <https://hub.zaikio.test/api/v1/connections?page=3&per_page=1>; rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Total-Count:
+      - '3'
+      Total-Pages:
+      - '3'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 85e91b42-7c93-4468-b4b9-f690931ac398
+      X-Runtime:
+      - '0.097975'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 12 Apr 2021 10:12:34 GMT
+      Content-Length:
+      - '347'
+    body:
+      encoding: UTF-8
+      string: '[{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2021-04-12T10:07:07.928Z","updated_at":"2021-04-12T10:07:07.928Z","app_name":"keyline","granted_oauth_scopes":["directory.machines.rw","directory.organization.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
+  recorded_at: Mon, 12 Apr 2021 10:12:34 GMT
 recorded_with: VCR 6.0.0

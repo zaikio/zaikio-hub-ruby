@@ -208,16 +208,23 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
     end
   end
 
-  test "fetches connections" do
+  test "fetches paginated connections" do
     VCR.use_cassette("connections") do
       Zaikio::Hub.with_basic_auth(client_id, client_secret) do
-        connections = Zaikio::Hub::Connection.all
-        assert_equal 3, connections.size
-        assert_equal "Person", connections.first.connectable_type
-        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connections.first.connectable_id
-        assert_equal ["directory.person.r", "warehouse.items.r"], connections
-          .first.granted_oauth_scopes
-        assert_equal [], connections.first.requested_oauth_scopes_waiting_for_approval
+        Zaikio::Hub::Connection.per_page(1).each_page do |page|
+          assert_equal 1, page.size
+          assert_equal 3, page.total_count
+
+          if page.first_page?
+            assert_equal "Person", page.first.connectable_type
+            assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", page.first.connectable_id
+            assert_equal ["directory.person.r", "warehouse.items.r"], page
+              .first.granted_oauth_scopes
+            assert_equal [], page.first.requested_oauth_scopes_waiting_for_approval
+          else
+            assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", page.first.connectable_id
+          end
+        end
       end
     end
   end
