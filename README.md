@@ -122,7 +122,17 @@ client.test_accounts.create(
 
 ```rb
 Zaikio::Hub.with_basic_auth(client_id, client_secret) do
-  connections = Zaikio::Hub::Connection.all
+  # Iterate through pages
+  Zaikio::Hub::Connection.per_page(10).each_page do |connections|
+    connections.size # e.g. 10
+    connections.total_count
+    connections.total_pages
+  end
+  # Load 2nd page
+  Zaikio::Hub::Connection.per_page(10).page(2)
+  # All
+  all_connections = Zaikio::Hub::Connection.all.each_page.flat_map(&:to_a)
+
   subscription = Zaikio::Hub::Subscription.find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
   subscription.plan # => "advanced"
   subscription.activate!

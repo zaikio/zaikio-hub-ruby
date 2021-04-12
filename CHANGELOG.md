@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Added pagination features for `Subscription` and `Connection`
+
 ## [0.5.0] - 2020-04-08
 
 * Added `granted_oauth_scopes`, `requested_oauth_scopes`, and `requested_oauth_scopes_waiting_for_approval` to Person and Organization

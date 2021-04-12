@@ -5,6 +5,9 @@ require "zaikio/hub/json_parser"
 require "zaikio/hub/authorization_middleware"
 require "zaikio/hub/basic_auth_middleware"
 
+# Pagination
+require "zaikio/hub/pagination"
+
 # Models
 require "zaikio/error"
 require "zaikio/hub/client"
@@ -70,6 +73,7 @@ module Zaikio
                                       ssl: { verify: configuration.environment != :test }) do |c|
           c.request     :json
           c.response    :logger, configuration&.logger, headers: false
+          c.use         Zaikio::Hub::Pagination::HeaderParser
           c.use         JSONParser
           c.use         AuthorizationMiddleware
           c.use         BasicAuthMiddleware
