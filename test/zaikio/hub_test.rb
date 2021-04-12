@@ -226,6 +226,22 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
           end
         end
       end
+
+      client = Zaikio::Hub::Client.from_credentials(client_id, client_secret)
+
+      client.connections.all.per_page(1).each_page do |page|
+        assert_equal 1, page.size
+        assert_equal 3, page.total_count
+
+        page.to_a.each do |connection|
+          if page.first_page?
+            assert_equal "Person", connection.connectable_type
+            assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
+          else
+            assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
+          end
+        end
+      end
     end
   end
 
