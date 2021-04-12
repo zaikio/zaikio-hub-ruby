@@ -19,6 +19,13 @@ module Zaikio
           result
         end
       end
+
+      def each_page
+        super() do |page|
+          page = RequestWrapper.new(page, @client)
+          yield(page)
+        end
+      end
     end
 
     class Client

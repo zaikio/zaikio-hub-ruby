@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Fixed that `each_page` works correctly with client instance
+
 ## [0.6.0] - 2020-04-12
 
 * Added pagination features for `Subscription` and `Connection`
