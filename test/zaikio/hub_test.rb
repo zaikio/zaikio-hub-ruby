@@ -61,6 +61,7 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
                      Zaikio::Hub.current_token_data.audience
         person = Zaikio::Hub::CurrentPerson.new
         person.fetch
+        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", person.attributes["id"]
         assert_equal "Frank Gallikanokus", person.full_name
         assert_equal "Bounty Soap Inc.", person.admin_organizations.first.name
         assert_equal %w[directory.person.r warehouse.items.r], person.granted_oauth_scopes
@@ -132,6 +133,7 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         assert_equal "My Machine", machine.name
         assert_equal "My Machine", organization.machines.all.last.name
         organization.fetch
+        assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", organization.attributes["id"]
         assert_equal "Bounty Soap Inc.", organization.name
         assert_equal %w[directory.organization.r directory.machines.rw],
                      organization.granted_oauth_scopes
