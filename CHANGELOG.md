@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.6.2] - 2021-04-27
+
+* Include `id` property in `CurrentPerson#attributes` and `CurrentOrganization#attributes`
+
 ## [0.6.1] - 2020-04-12
 
 * Fixed that `each_page` works correctly with client instance
@@ -57,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added subscriptions (migration required)
 
-[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.1..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.2..HEAD
+[0.6.2]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.1..v0.6.2
 [0.6.1]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.0..v0.6.1
 [0.6.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.5.0..v0.6.0
 [0.5.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.4.1..v0.5.0
