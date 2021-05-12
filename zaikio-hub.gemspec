@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "jwt", "~> 2.2.1"
   spec.add_dependency "multi_json", ">= 1.14.1", "< 1.16.0"
   spec.add_dependency "oj", ">= 3.10.5", "< 3.12.0"
-  spec.add_dependency "spyke", ">= 5.3.4", "< 5.5.0"
+  spec.add_dependency "spyke", ">= 5.3.4", "< 6.1.0"
 end
