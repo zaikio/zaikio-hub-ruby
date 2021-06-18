@@ -46,8 +46,10 @@ token = "..." # Your valid JWT for an organization
 Zaikio::Hub.with_token(token) do
   organization = Zaikio::Hub::CurrentOrganization.new
 
-  # Fetch Data
+  # Fetch data
   organization.memberships.find('abc')
+
+  # Note that .all understands pagination headers and will fetch all pages
   organization.members.all
   organization.machines.all
   organization.software.all
@@ -122,16 +124,15 @@ client.test_accounts.create(
 
 ```rb
 Zaikio::Hub.with_basic_auth(client_id, client_secret) do
-  # Iterate through pages
-  Zaikio::Hub::Connection.per_page(10).each_page do |connections|
-    connections.size # e.g. 10
-    connections.total_count
-    connections.total_pages
-  end
-  # Load 2nd page
-  Zaikio::Hub::Connection.per_page(10).page(2)
+  # Get total number of records
+  Zaikio::Hub::Connection.per_page(10).total_count
+  #=> 20
+
+  # Fetch just the second page
+  Zaikio::Hub::Connection.per_page(10).page(2).find_some
+
   # All
-  all_connections = Zaikio::Hub::Connection.all.each_page.flat_map(&:to_a)
+  all_connections = Zaikio::Hub::Connection.all.to_a
 
   subscription = Zaikio::Hub::Subscription.find("Organization-b1475f65-236c-58b8-96e1-e1778b43beb7")
   subscription.plan # => "advanced"

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2021-06-18
+
+* **BREAKING** `Relation#all` now fetches all following paginated resources by default
+  (endpoints which don't support pagination are unaffected).
+* **BREAKING** Removed `Relation#each_page` method. You should just use the `all` method now
+  instead:
+
+```diff
+-Model.all.each_page.flat_map(&:to_a)
++Model.all.to_a
+```
+
 ## [0.6.2] - 2021-04-27
 
 * Include `id` property in `CurrentPerson#attributes` and `CurrentOrganization#attributes`

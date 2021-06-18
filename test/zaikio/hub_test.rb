@@ -213,35 +213,34 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
   test "fetches paginated connections" do
     VCR.use_cassette("connections") do
       Zaikio::Hub.with_basic_auth(client_id, client_secret) do
-        Zaikio::Hub::Connection.per_page(1).each_page do |page|
-          assert_equal 1, page.size
-          assert_equal 3, page.total_count
+        relation = Zaikio::Hub::Connection.per_page(1)
 
-          if page.first_page?
-            assert_equal "Person", page.first.connectable_type
-            assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", page.first.connectable_id
-            assert_equal ["directory.person.r", "warehouse.items.r"], page
-              .first.granted_oauth_scopes
-            assert_equal [], page.first.requested_oauth_scopes_waiting_for_approval
+        assert_equal 3, relation.total_count
+
+        all = relation.to_a
+        assert_equal 3, all.size
+
+        all.each_with_index do |connection, idx|
+          if idx.zero?
+            assert_equal "Person", connection.connectable_type
+            assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
+            assert_equal ["directory.person.r", "warehouse.items.r"],
+              connection.granted_oauth_scopes
+            assert_equal [], connection.requested_oauth_scopes_waiting_for_approval
           else
-            assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", page.first.connectable_id
+            assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
           end
         end
       end
 
       client = Zaikio::Hub::Client.from_credentials(client_id, client_secret)
 
-      client.connections.all.per_page(1).each_page do |page|
-        assert_equal 1, page.size
-        assert_equal 3, page.total_count
-
-        page.to_a.each do |connection|
-          if page.first_page?
-            assert_equal "Person", connection.connectable_type
-            assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
-          else
-            assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
-          end
+      client.connections.all.per_page(1).each_with_index do |connection, idx|
+        if idx.zero?
+          assert_equal "Person", connection.connectable_type
+          assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
+        else
+          assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
         end
       end
     end
