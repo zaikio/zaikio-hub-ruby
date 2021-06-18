@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.0] - 2021-06-18
+
+* **BREAKING** `Relation#all` now fetches all following paginated resources by default
+  (endpoints which don't support pagination are unaffected).
+* **BREAKING** Removed `Relation#each_page` method. You should just use the `all` method now
+  instead:
+
+```diff
+-Model.all.each_page.flat_map(&:to_a)
++Model.all.to_a
+```
+
 ## [0.6.2] - 2021-04-27
 
 * Include `id` property in `CurrentPerson#attributes` and `CurrentOrganization#attributes`
@@ -61,7 +73,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added subscriptions (migration required)
 
-[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.2..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.7.0..HEAD
+[0.7.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.2..v0.7.0
 [0.6.2]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.1..v0.6.2
 [0.6.1]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.6.0..v0.6.1
 [0.6.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.5.0..v0.6.0

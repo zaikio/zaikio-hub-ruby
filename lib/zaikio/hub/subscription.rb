@@ -1,8 +1,6 @@
 module Zaikio
   module Hub
     class Subscription < Base
-      include Zaikio::Hub::Pagination::Scopes
-
       uri "subscriptions(/:id)"
 
       include_root_in_json :subscription

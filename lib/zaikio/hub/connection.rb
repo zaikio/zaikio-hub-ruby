@@ -1,8 +1,6 @@
 module Zaikio
   module Hub
     class Connection < Base
-      include Zaikio::Hub::Pagination::Scopes
-
       uri "connections(/:id)"
 
       include_root_in_json :connection
