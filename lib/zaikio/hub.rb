@@ -7,7 +7,6 @@ require "zaikio/hub/authorization_middleware"
 require "zaikio/hub/basic_auth_middleware"
 
 # Models
-require "zaikio/error"
 require "zaikio/hub/client"
 require "zaikio/hub/base"
 require "zaikio/hub/asset"
