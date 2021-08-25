@@ -47,6 +47,14 @@ module Zaikio
       def members
         memberships.with_fallback.map(&:person)
       end
+
+      def create_subscription(status: "active", plan_name: nil)
+        if Zaikio::Hub.current_token_data.subject_type == "Organization"
+          result = self.class.request(:post, "organization/subscription",
+                                      subscription: { status: status, plan_name: plan_name })
+          Zaikio::Hub::Subscription.new(result.data)
+        end
+      end
     end
   end
 end
