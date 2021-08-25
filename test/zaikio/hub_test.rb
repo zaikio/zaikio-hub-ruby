@@ -152,6 +152,25 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
     end
   end
 
+  test "created free subscription" do
+    host = "https://hub.zaikio.test/api/v1"
+    VCR.use_cassette("current_organization_subscription", record: :new_episodes) do
+      Zaikio::Hub.with_token(org_token) do
+        organization = Zaikio::Hub::CurrentOrganization.new
+        subscription = organization.create_subscription(plan_name: "free")
+
+        body = { subscription: { status: "active", plan_name: "free" } }
+        assert_requested :post, "#{host}/organization/subscription",
+                         headers: default_headers(org_token), body: body.to_json,
+                         times: 1
+        assert_equal "active", subscription.status
+        assert_equal "b1475f65-236c-58b8-96e1-e1778b43beb7", subscription.subscriber_id
+        assert_equal "free", subscription.plan
+        assert_equal "keyline", subscription.app_name
+      end
+    end
+  end
+
   test "creates site with address" do
     VCR.use_cassette("create_site", record: :new_episodes) do
       Zaikio::Hub.with_token(org_token) do
@@ -225,7 +244,7 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
             assert_equal "Person", connection.connectable_type
             assert_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id
             assert_equal ["directory.person.r", "warehouse.items.r"],
-              connection.granted_oauth_scopes
+                         connection.granted_oauth_scopes
             assert_equal [], connection.requested_oauth_scopes_waiting_for_approval
           else
             assert_not_equal "383663bc-149a-5b76-b50d-ee039046c12e", connection.connectable_id

@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://hub.zaikio.test/api/v1/organization/subscription
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"status":"active","plan_name":"free"}}'
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYjE0NzVmNjUtMjM2Yy01OGI4LTk2ZTEtZTE3NzhiNDNiZWI3IiwiYXVkIjpbImtleWxpbmUiXSwianRpIjoiNjMxNDU2OTgtYzlkOS00ZjJmLWI4YWUtZWJmMzcyOWMwNTA3IiwibmJmIjoxNTg5NTU3NzM2LCJleHAiOjMzMTQ2NDcwMTM2LCJqa3UiOiJodHRwczovL2h1Yi56YWlraW8udGVzdC9hcGkvdjEvand0X3B1YmxpY19rZXlzIiwic2NvcGUiOlsiZGlyZWN0b3J5LmJ1c2luZXNzX3JlbGF0aW9uc2hpcHMucnciLCJkaXJlY3RvcnkuY29uZmlkZW50aWFsX21hY2hpbmVfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5jb25maWRlbnRpYWxfc3BlY2lhbGlzdF9zcGVjaWZpY2F0aW9ucy5yIiwiZGlyZWN0b3J5LmRlbGVnYXRpb25zLnJ3IiwiZGlyZWN0b3J5Lm1hY2hpbmVfc3BlY2lmaWNhdGlvbnMuciIsImRpcmVjdG9yeS5tYWNoaW5lcy5ydyIsImRpcmVjdG9yeS5tYW51ZmFjdHVyZWRfbWFjaGluZXMucnciLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uLnIiLCJkaXJlY3Rvcnkub3JnYW5pemF0aW9uX21lbWJlcnMuciIsImRpcmVjdG9yeS5yZW1vdmVfbWFjaGluZXMudyIsImRpcmVjdG9yeS5yZW1vdmVfc29mdHdhcmUudyIsImRpcmVjdG9yeS5yZW1vdmVfc3BlY2lhbGlzdHMudyIsImRpcmVjdG9yeS5zaXRlcy5ydyIsImRpcmVjdG9yeS5zb2Z0d2FyZS5ydyIsImRpcmVjdG9yeS5zcGVjaWFsaXN0X3NwZWNpZmljYXRpb25zLnIiLCJkaXJlY3Rvcnkuc3BlY2lhbGlzdHMucnciXX0.xFb2MLNGh5MHGDzS1sEPHtkMbHeXLTWdLhP1qeSXuT2WlKSjoENDYHmtMFyT_xVsYWdStkLYdDoeP9pnUPv1SOmnVArLOf-39LG_j4FJ-HnyUFpW_vVmv7ZNcbZA8N3MK9JS_bDC2c7GdvaEH5YrmnTvBWAkrriiaaD46fxFBju5tACgOdeXBG4XFuiAPWfbsVKzAfdosjqZEh0MjhfT-TSRu-UN7r1MaU4A9oJdtnr6ZrCQAzX3AyGKR7pCEay0AMod_NHGQvVW4KKgviFBrz_JIych8pjTiWTWx8J9k2NRf7ZXNhRyECpySZbADR7AnDMWCraRe0cmnThOtOponw
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"4c6a83e970ea03f316812e4424f5fe8f"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - af14a777-55b5-45bd-835d-74d4f93cf054
+      X-Runtime:
+      - '0.712670'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Wed, 25 Aug 2021 11:42:09 GMT
+      Content-Length:
+      - '439'
+    body:
+      encoding: UTF-8
+      string: '{"subscriber_type":"Organization","subscriber_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","status":"active","activated_at":"2021-08-25T11:42:08.889Z","last_billed_at":null,"last_paid_at":null,"trial_ended_at":null,"created_at":"2021-08-25T11:42:09.337Z","updated_at":"2021-08-25T11:42:09.337Z","app_name":"keyline","plan":"free","preceding_plan":"advanced","changed_plan_at":"2021-08-25T11:42:08.917Z","usages_in_current_billing_period":{}}'
+  recorded_at: Wed, 25 Aug 2021 11:42:09 GMT
+recorded_with: VCR 6.0.0
