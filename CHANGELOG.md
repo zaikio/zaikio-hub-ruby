@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Added `.connections` and `.apps` for `CurrentOrganization`s that are vendors
+
 ## [0.8.0] - 2021-08-25
 
 * Added `CurrentOrganization#create_subscription`

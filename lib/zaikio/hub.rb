@@ -25,6 +25,7 @@ require "zaikio/hub/current_organization"
 require "zaikio/hub/role"
 require "zaikio/hub/revoked_access_token"
 require "zaikio/hub/connection"
+require "zaikio/hub/app"
 require "zaikio/hub/subscription"
 require "zaikio/hub/test_account"
 
