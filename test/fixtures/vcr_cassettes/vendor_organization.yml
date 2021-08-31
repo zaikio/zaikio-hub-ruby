@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/connections?current_organization_id&per_page=20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.7.0
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYzQ1M2NhOTUtNTg1MC01ZDlhLWI5M2UtMDUwMzM0Yzk1MWFmIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9jNDUzY2E5NS01ODUwLTVkOWEtYjkzZS0wNTAzMzRjOTUxYWYiXSwianRpIjoiMjljZDU4MWMtZTQ3Yy00NWUzLThmYzgtNzAyZmE0OWMxOTA5IiwibmJmIjoxNjMwMzI5NDMwLCJleHAiOjQ3ODYwMDMwMjksImprdSI6Imh0dHBzOi8vaHViLnphaWtpby50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYXBwcy5ydyIsImRpcmVjdG9yeS5jb25uZWN0aW9uc19hbmRfc3Vic2NyaXB0aW9ucy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciJdfQ.C9v4LpegLxi1v1zlY3RtYbnF5Xe0g78sPC1kElN7RYPzIzrbEAEMugwoocpT3YyNy1OoszIV1m2gd26btW9VIYCMz3idJrdG-W0nL1Zbp_qpicU1CVl9PJIzuUCnAavscGkd-sPabjJQO2yQZGAgRlcZt-0aD0uRsUVPDf9RUajAYqIh_iZSqGDnVLgz8XXRSFnht7mDD1c8EvGzLIE5JoLtVRCVJrzeR1wwpHe2QDDeRQA77P0xOOK5S0WY-VCmmdO_6deEgeL2DJpOZSUeoZHsRxhF_e0slH4ZYXOg-EOaenDzcfw1OE_Fj8kae77rWHWPxhaVOJpIQiFwaRXOpA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Current-Page:
+      - '1'
+      Etag:
+      - W/"5c9976ccf41cff23087344077a6c0931"
+      Link:
+      - <https://hub.zaikio.test/api/v1/connections?current_organization_id&per_page=20&page=1>;
+        rel="first", <https://hub.zaikio.test/api/v1/connections?current_organization_id&per_page=20&page=1>;
+        rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Total-Count:
+      - '3'
+      Total-Pages:
+      - '1'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - cf9efccd-7e34-43e8-a5fd-f75f2ecfbeb1
+      X-Runtime:
+      - '0.951421'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 30 Aug 2021 13:35:06 GMT
+      Content-Length:
+      - '987'
+    body:
+      encoding: UTF-8
+      string: '[{"connectable_type":"Person","connectable_id":"383663bc-149a-5b76-b50d-ee039046c12e","created_at":"2021-08-25T11:41:54.411Z","updated_at":"2021-08-25T11:41:54.411Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r","warehouse.items.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Person","connectable_id":"6afd2277-9e1f-5a88-8984-bacb5f798716","created_at":"2021-08-25T11:41:54.411Z","updated_at":"2021-08-25T11:41:54.411Z","app_name":"keyline","granted_oauth_scopes":["directory.person.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]},{"connectable_type":"Organization","connectable_id":"b1475f65-236c-58b8-96e1-e1778b43beb7","created_at":"2021-08-25T11:41:54.411Z","updated_at":"2021-08-25T11:41:54.411Z","app_name":"keyline","granted_oauth_scopes":["directory.machines.rw","directory.organization.r"],"requested_oauth_scopes":[],"requested_oauth_scopes_waiting_for_approval":[]}]'
+  recorded_at: Mon, 30 Aug 2021 13:35:06 GMT
+- request:
+    method: get
+    uri: https://hub.zaikio.test/api/v1/apps?current_organization_id&per_page=20
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.7.0
+      Authorization:
+      - Bearer eyJraWQiOiJhNmE1MzFjMGZhZTVlNWE1MDAzZDI2ZTRhMTIwMmIwNjg2ZDFkNTRjNGZhYTViZDlkZTBjMzdkY2JkY2RkYzdlIiwiYWxnIjoiUlMyNTYifQ.eyJpc3MiOiJaQUkiLCJzdWIiOiJPcmdhbml6YXRpb24vYzQ1M2NhOTUtNTg1MC01ZDlhLWI5M2UtMDUwMzM0Yzk1MWFmIiwiYXVkIjpbIk9yZ2FuaXphdGlvbi9jNDUzY2E5NS01ODUwLTVkOWEtYjkzZS0wNTAzMzRjOTUxYWYiXSwianRpIjoiMjljZDU4MWMtZTQ3Yy00NWUzLThmYzgtNzAyZmE0OWMxOTA5IiwibmJmIjoxNjMwMzI5NDMwLCJleHAiOjQ3ODYwMDMwMjksImprdSI6Imh0dHBzOi8vaHViLnphaWtpby50ZXN0L2FwaS92MS9qd3RfcHVibGljX2tleXMiLCJzY29wZSI6WyJkaXJlY3RvcnkuYXBwcy5ydyIsImRpcmVjdG9yeS5jb25uZWN0aW9uc19hbmRfc3Vic2NyaXB0aW9ucy5ydyIsImRpcmVjdG9yeS5vcmdhbml6YXRpb24uciJdfQ.C9v4LpegLxi1v1zlY3RtYbnF5Xe0g78sPC1kElN7RYPzIzrbEAEMugwoocpT3YyNy1OoszIV1m2gd26btW9VIYCMz3idJrdG-W0nL1Zbp_qpicU1CVl9PJIzuUCnAavscGkd-sPabjJQO2yQZGAgRlcZt-0aD0uRsUVPDf9RUajAYqIh_iZSqGDnVLgz8XXRSFnht7mDD1c8EvGzLIE5JoLtVRCVJrzeR1wwpHe2QDDeRQA77P0xOOK5S0WY-VCmmdO_6deEgeL2DJpOZSUeoZHsRxhF_e0slH4ZYXOg-EOaenDzcfw1OE_Fj8kae77rWHWPxhaVOJpIQiFwaRXOpA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Current-Page:
+      - '1'
+      Etag:
+      - W/"26319648245833972ad3fd373b4feb1c"
+      Link:
+      - <https://hub.zaikio.test/api/v1/apps?current_organization_id&per_page=20&page=1>;
+        rel="first", <https://hub.zaikio.test/api/v1/apps?current_organization_id&per_page=20&page=1>;
+        rel="last"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Total-Count:
+      - '3'
+      Total-Pages:
+      - '1'
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Request-Id:
+      - 5ba04ae9-f944-441e-9945-1b4749a56bbc
+      X-Runtime:
+      - '0.047903'
+      X-Xss-Protection:
+      - 1; mode=block
+      Date:
+      - Mon, 30 Aug 2021 13:37:09 GMT
+      Content-Length:
+      - '373'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"69321a62-1779-5579-9a06-c9d7f6bcee49","name":"keyline","category":"mis_erp","kind":"public","state":"active"},{"id":"a1198dc4-9e7f-5bea-9c09-2ac71f46a02e","name":"keyline_power_bi","category":"reporting","kind":"addon","state":"active"},{"id":"5c0bab2b-fca8-5572-bc7f-1625a69b5900","name":"keyline_pipedrive","category":"reporting","kind":"addon","state":"active"}]'
+  recorded_at: Mon, 30 Aug 2021 13:37:09 GMT
+recorded_with: VCR 6.0.0
