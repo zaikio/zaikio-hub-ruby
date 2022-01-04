@@ -29,9 +29,7 @@ task default: :test
 
 namespace :test do
   desc 'Runs RuboCop on specified directories'
-  RuboCop::RakeTask.new(:rubocop) do |task|
-    task.fail_on_error = false
-  end
+  RuboCop::RakeTask.new(:rubocop)
 end
 
 Rake::Task[:test].enhance ['test:rubocop']
