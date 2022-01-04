@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Fix warning about redefined methods in BasicAuthMiddleware
+
 ## [0.9.0] - 2021-08-31
 
 * Added `.connections` and `.apps` for `CurrentOrganization`s that are vendors

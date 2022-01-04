@@ -4,8 +4,6 @@ require "base64"
 module Zaikio
   module Hub
     class BasicAuthMiddleware < Faraday::Middleware
-      class_attribute :credentials
-
       def self.credentials
         @credentials ||= Concurrent::ThreadLocalVar.new { nil }
         @credentials.value
