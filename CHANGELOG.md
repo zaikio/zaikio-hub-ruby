@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.1] - 2022-01-05
+
 * Fix warning about redefined methods in BasicAuthMiddleware
+* Permit newer versions of Spyke & JWT gems
 
 ## [0.9.0] - 2021-08-31
 
