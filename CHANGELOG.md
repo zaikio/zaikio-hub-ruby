@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - 2022-08-15
+
+* Update `zaikio-client-helpers` and reuse logic to use `Zaikio::Client.with_token`
+
 ## [0.9.1] - 2022-01-05
 
 * Fix warning about redefined methods in BasicAuthMiddleware
