@@ -1,3 +1,5 @@
+require "jwt"
+
 module Zaikio
   module Hub
     class RequestWrapper
