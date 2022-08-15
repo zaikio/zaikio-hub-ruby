@@ -3,7 +3,6 @@ require "spyke"
 require "zaikio-client-helpers"
 
 require "zaikio/hub/configuration"
-require "zaikio/hub/authorization_middleware"
 require "zaikio/hub/basic_auth_middleware"
 
 # Models
@@ -44,11 +43,8 @@ module Zaikio
         Base.connection = create_connection
       end
 
-      def with_token(token)
-        AuthorizationMiddleware.token = token
-        yield
-      ensure
-        AuthorizationMiddleware.reset_token
+      def with_token(token, &block)
+        Zaikio::Client.with_token(token, &block)
       end
 
       def with_basic_auth(login, password)
@@ -59,23 +55,20 @@ module Zaikio
       end
 
       def current_token_data
-        return unless AuthorizationMiddleware.token
+        return unless Zaikio::Client::Helpers::AuthorizationMiddleware.token
 
-        payload = JWT.decode(AuthorizationMiddleware.token, nil, false).first
+        payload = JWT.decode(
+          Zaikio::Client::Helpers::AuthorizationMiddleware.token,
+          nil,
+          false
+        ).first
 
         create_token_data(payload)
       end
 
       def create_connection
-        self.connection = Faraday.new(url: "#{configuration.host}/api/v1",
-                                      ssl: { verify: configuration.environment != :test }) do |c|
-          c.request     :json
-          c.response    :logger, configuration&.logger, headers: false
-          c.use         Zaikio::Client::Helpers::Pagination::FaradayMiddleware
-          c.use         Zaikio::Client::Helpers::JSONParser
-          c.use         AuthorizationMiddleware
-          c.use         BasicAuthMiddleware
-          c.adapter     Faraday.default_adapter
+        self.connection = Zaikio::Client.create_connection(configuration).tap do |c|
+          c.use BasicAuthMiddleware
         end
       end
 
