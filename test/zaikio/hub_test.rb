@@ -109,6 +109,13 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
                          end
         assert_equal "383663bc-149a-5b76-b50d-ee039046c12e",
                      Zaikio::Hub.current_token_data.subject_id
+        assert_equal "Person/383663bc-149a-5b76-b50d-ee039046c12e",
+                     Zaikio::Hub.current_token_data.subject
+        assert_equal "Person", Zaikio::Hub.current_token_data.subject_type
+        assert_equal "Person/383663bc-149a-5b76-b50d-ee039046c12e",
+                     Zaikio::Hub.current_token_data.on_behalf_of
+        assert_equal "383663bc-149a-5b76-b50d-ee039046c12e",
+                     Zaikio::Hub.current_token_data.on_behalf_of_id
       end
     end
   end

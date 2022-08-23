@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Extract token data logic into its own `Zaikio::Hub::TokenData` class
+
+  This also exposes the `sub` attribute of the token as `TokenData#subject`.
+
 ## [0.10.0] - 2022-08-15
 
 * Update `zaikio-client-helpers` and reuse logic to use `Zaikio::Client.with_token`
