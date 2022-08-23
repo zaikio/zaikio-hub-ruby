@@ -27,6 +27,7 @@ require "zaikio/hub/connection"
 require "zaikio/hub/app"
 require "zaikio/hub/subscription"
 require "zaikio/hub/test_account"
+require "zaikio/hub/token_data"
 
 module Zaikio
   module Hub
@@ -73,15 +74,7 @@ module Zaikio
       end
 
       def create_token_data(payload)
-        subjects = payload["sub"].split(">")
-
-        OpenStruct.new(
-          audience: payload["aud"].first,
-          on_behalf_of_id: subjects.first.split("/").last,
-          subject_id: subjects.last.split("/").last,
-          subject_type: subjects.last.split("/").first,
-          scopes: payload["scope"]
-        )
+        TokenData.from(payload)
       end
     end
   end
