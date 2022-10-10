@@ -7,12 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Added `subscription_url` attribute in `Subscription`
+
 ## [0.11.0] - 2022-08-30
 
 * Extract token data logic into its own `Zaikio::Hub::TokenData` class
   This also exposes the `sub` attribute of the token as `TokenData#subject`.
 * Support newer versions of `jwt` and `spyke`
-* Added `subscription_url` attribute in `Subscription`
 
 ## [0.10.0] - 2022-08-15
 
