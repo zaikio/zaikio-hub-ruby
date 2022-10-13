@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Fixed `subscription_url` attribute typo in `Subscription`
+
 ## [0.11.1] - 2022-10-13
 
 * Added `subscription_url` attribute in `Subscription`
