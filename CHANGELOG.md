@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Add `Zaikio::Hub::SubscriptionInvitation`
+
 ## [0.12.0] - 2023-02-09
 
 * Update client-helpers and introduce default timeouts
