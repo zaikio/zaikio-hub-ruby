@@ -27,8 +27,6 @@ module Zaikio
                                          uri: "organization/memberships(/:id)"
       has_many :business_relationships,  class_name: "Zaikio::Hub::BusinessRelationship",
                                          uri: "organization/business_relationships(/:id)"
-      has_many :software,                class_name: "Zaikio::Hub::Software",
-                                         uri: "software(/:id)"
       has_many :machines,                class_name: "Zaikio::Hub::Machine",
                                          uri: "machines(/:id)"
       has_many :specialists,             class_name: "Zaikio::Hub::Specialist",
