@@ -30,17 +30,6 @@ module Zaikio
         end
       end
 
-      def specification
-        prefix = if Zaikio::Hub.current_token_data.subject_type == "Person"
-                   "person/organizations/#{owner_id || organization_id}/"
-                 else
-                   ""
-                 end
-        self.class.request(:get,
-                           "#{prefix}#{collection_name}/#{id}/#{singular_name}_specification")
-            &.body&.dig("data")
-      end
-
       private
 
       def collection_name

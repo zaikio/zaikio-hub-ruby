@@ -158,7 +158,6 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         organization = Zaikio::Hub::CurrentOrganization.new
         machine2 = organization.machines.find("55a37c0f-c2c5-531c-be8c-8e012a938fc5")
         assert_equal "55a37c0f-c2c5-531c-be8c-8e012a938fc5", machine2.id
-        assert_equal({ "capabilities" => [] }, machine2.specification)
       end
     end
   end

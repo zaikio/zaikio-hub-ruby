@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 * **BREAKING** Remove `Software` asset type
+* **BREAKING** Remove `Asset#specification`
 
 ## [0.13.0] - 2023-03-24
 
