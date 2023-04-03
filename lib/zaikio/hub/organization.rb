@@ -15,8 +15,6 @@ module Zaikio
       # Associations
       has_many :memberships,             class_name: "Zaikio::Hub::Membership",
                                          uri: "person/organizations/:organization_id/memberships"
-      has_many :software,                class_name: "Zaikio::Hub::Software",
-                                         uri: "person/organizations/:organization_id/software"
       has_many :machines,                class_name: "Zaikio::Hub::Machine",
                                          uri: "person/organizations/:organization_id/machines"
       has_many :specialists,             class_name: "Zaikio::Hub::Specialist",

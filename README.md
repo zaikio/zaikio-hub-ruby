@@ -52,7 +52,6 @@ Zaikio::Hub.with_token(token) do
   # Note that .all understands pagination headers and will fetch all pages
   organization.members.all
   organization.machines.all
-  organization.software.all
   organization.sites.all
   organization.sites.find('123')
   organization.business_relationships.all
