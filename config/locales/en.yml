@@ -1,0 +1,52 @@
+en:
+  activemodel:
+    attributes:
+      "zaikio/hub/machine/capability":
+        ctp: CTP
+        digital_printing: Digital printing
+        digital_web_printing: Digital web printing
+        inkjet_printing: Inkjet printing
+        inkjet_web_printing: Inkjet web printing
+        offset_printing: Offset printing
+        offset_uv_printing: Offset UV printing
+        offset_uvle_printing: Offset UVLE printing
+        offset_web_printing: Offset web printing
+        offset_web_uv_printing: Offset web UV printing
+        offset_web_uvle_printing: Offset web UVLE printing
+        flexo_printing: Flexo printing
+        letterpress_printing: Letterpress printing
+        pad_printing: Pad printing
+        pre_cutting: Pre cutting
+        cutting: Cutting
+        intermediate_cutting: Intermediate cutting
+        folding: Folding
+        laminating: Laminating
+        perfect_binding: Perfect binding
+        hole_drilling: Hole drilling
+        comb_binding: Comb binding
+        embossing: Embossing
+        engraving: Engraving
+        foil_stamping: Foil stamping
+        gluing: Gluing
+        head_banding: Head banding
+        perforating: Perforating
+        ring_binding: Ring binding
+        saddle_stitching: Saddle stitching
+        spiral_binding: Spiral binding
+        strip_binding: Strip binding
+        thread_sewing: Thread sewing
+        envelope_stuffing: Envelope stuffing
+        counting: Counting
+        wrapping: Wrapping
+        boxing: Boxing
+        shrink_wrapping: Shrink wrapping
+        addressing: Addressing
+        franking: Franking
+      "zaikio/hub/specialist/capability":
+        envelope_stuffing: Envelope stuffing
+        counting: Counting
+        wrapping: Wrapping
+        boxing: Boxing
+        shrink_wrapping: Shrink wrapping
+        addressing: Addressing
+        franking: Franking
