@@ -4,3 +4,49 @@ de:
       "zaikio/hub/machine/capability":
         ctp: CTP
         digital_printing: Digitaldruck
+        digital_web_printing: Digitaler Rollendruck
+        inkjet_printing: Inkjet-Druck
+        inkjet_web_printing: Inkjet-Rollendruck
+        offset_printing: Offsetdruck
+        offset_uv_printing: UV-Offsetdruck
+        offset_uvle_printing: Offset-UVLE-Druck
+        offset_web_printing: Offset-Rollendruck
+        offset_web_uv_printing: Offset-Rollen-UV-Druck
+        offset_web_uvle_printing: Offset-Rollen-UVLE-Druck
+        flexo_printing: Flexodruck
+        letterpress_printing: Buchdruck
+        pad_printing: Tampondruck
+        pre_cutting: Vorschneiden
+        cutting: Schneiden
+        intermediate_cutting: Zwischenschneiden
+        folding: Falten
+        laminating: Laminieren
+        perfect_binding: Perfekte Bindung
+        hole_drilling: Löcher bohren
+        comb_binding: Kamm-Bindung
+        embossing: Prägen
+        engraving: Gravieren
+        foil_stamping: Folie prägen
+        gluing: Kleben
+        head_banding: Kopfbinden
+        perforating: Perforieren
+        ring_binding: Ringbindung
+        saddle_stitching: Sattelnaht
+        spiral_binding: Spiralbindung
+        strip_binding: Streifenbindung
+        thread_sewing: Fadenheftung
+        envelope_stuffing: Umschlag füllen
+        counting: Zählen
+        wrapping: Verpacken
+        boxing: Paketverpacken
+        shrink_wrapping: Schrumpffolienverpackung
+        addressing: Adressieren
+        franking: Frankieren
+      "zaikio/hub/specialist/capability":
+        envelope_stuffing: Umschlag füllen
+        counting: Zählen
+        wrapping: Verpacken
+        boxing: Paketverpacken
+        shrink_wrapping: Schrumpffolienverpackung
+        addressing: Adressieren
+        franking: Frankieren
