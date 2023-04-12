@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Add `capabilities` attribute to `Machine` and `Specialist`
+* Add `Zaikio::Hub::Asset.capabilities` method for a list of all capabilities
+
 ## [0.14.0] - 2023-04-03
 
 * **BREAKING** Remove `Software` asset type

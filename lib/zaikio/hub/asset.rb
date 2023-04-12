@@ -3,6 +3,19 @@ module Zaikio
     module Asset
       extend ActiveSupport::Concern
 
+      # Constants
+      def self.capabilities
+        %w[
+          ctp digital_printing digital_web_printing inkjet_printing inkjet_web_printing
+          offset_printing offset_uv_printing offset_uvle_printing offset_web_printing
+          offset_web_uv_printing offset_web_uvle_printing flexo_printing letterpress_printing
+          pad_printing pre_cutting cutting intermediate_cutting folding laminating perfect_binding
+          hole_drilling comb_binding embossing engraving foil_stamping gluing head_banding
+          perforating ring_binding saddle_stitching spiral_binding strip_binding thread_sewing
+          envelope_stuffing counting wrapping boxing shrink_wrapping addressing franking
+        ].freeze
+      end
+
       included do
         # Callbacks
         after_create :make_organization_owner

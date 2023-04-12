@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.6.5"
 
   spec.add_dependency "concurrent-ruby"
+  spec.add_dependency "i18n"
   spec.add_dependency "jwt", ">= 2.2.1", "< 2.8.0"
   spec.add_dependency "multi_json", ">= 1.14.1", "< 1.16.0"
   spec.add_dependency "oj", ">= 3.10.5", "< 3.15.0"

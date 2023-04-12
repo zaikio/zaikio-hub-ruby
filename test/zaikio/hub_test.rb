@@ -429,4 +429,13 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
       end
     end
   end
+
+  test "get capabilities translations" do
+    I18n.default_locale = :en
+    I18n.config.available_locales = %i[en de]
+    I18n.with_locale(:de) do
+      assert_equal "Digitaldruck", Zaikio::Hub::Machine
+        .human_attribute_name("capability.digital_printing")
+    end
+  end
 end

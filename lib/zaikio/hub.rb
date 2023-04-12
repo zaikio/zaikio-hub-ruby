@@ -42,6 +42,7 @@ module Zaikio
         yield(configuration)
 
         Base.connection = create_connection
+        I18n.load_path += Dir["#{File.expand_path('../../config/locales', __dir__)}/*.yml"]
       end
 
       def with_token(token, &block)

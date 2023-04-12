@@ -1,0 +1,6 @@
+en:
+  activemodel:
+    attributes:
+      "zaikio/hub/machine/capability":
+        ctp: CTP
+        digital_printing: Digital printing
