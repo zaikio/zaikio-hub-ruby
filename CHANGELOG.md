@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+* Add translations for `kind` attribute for `Machine` and `Specialist`
+
 ## [0.15.0] - 2023-04-12
 
 * Add `capabilities` attribute to `Machine` and `Specialist`

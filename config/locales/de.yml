@@ -42,6 +42,41 @@ de:
         shrink_wrapping: Schrumpffolienverpackung
         addressing: Adressieren
         franking: Frankieren
+      "zaikio/hub/machine/kind":
+        adhesive_binder: Klebehefter
+        binder: Bindemaschine
+        book_puncher: Buchhefter
+        box_maker: Kartonagenbauer
+        box_packer: Kartonagenpacker
+        case_maker: Faltschachtelbauer
+        corner_rounder: Eckenrundungsgerät
+        ctp: Computer-zu-Platte
+        cutter: Schneidemaschine
+        digital_press: Digitaldruckmaschine
+        drill: Bohrmaschine
+        drill_puncher: Bohrhefter
+        eyeletter: Blickfang
+        flexo_press: Flexodruckmaschine
+        folder: Falzmaschine
+        gatherer: Sammelmaschine
+        inkjet_press: Tintenstrahldruckmaschine
+        laminator: Laminiermaschine
+        letterpress_press: Buchdruckmaschine
+        notcher: Nieter
+        offset_press: Offsetdruckmaschine
+        pad_press: Pad-Druckmaschine
+        perforator: Perforator
+        platesetter: Plattenbelichter
+        shape_cutter: Formschneider
+        silkscreen_press: Siebdruckmaschine
+        spindle_drill: Spindeldrill
+        stitcher: Heftmaschine
+        thread_sewer: Fadenhefter
+        trimmer: Schneidemaschine
+        web_digital_press: Web Digitaldruckmaschine
+        web_inkjet_press: Web Tintenstrahldruckmaschine
+        web_offset_press: Web Offsetdruckmaschine
+        web_silkscreen_press: Web Siebdruckmaschine
       "zaikio/hub/specialist/capability":
         envelope_stuffing: Umschlag füllen
         counting: Zählen
@@ -50,3 +85,7 @@ de:
         shrink_wrapping: Schrumpffolienverpackung
         addressing: Adressieren
         franking: Frankieren
+      "zaikio/hub/specialist/kind":
+        other: Andere
+        boxing: Verpackung
+        shipping: Versand

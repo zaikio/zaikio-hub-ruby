@@ -42,6 +42,41 @@ en:
         shrink_wrapping: Shrink wrapping
         addressing: Addressing
         franking: Franking
+      "zaikio/hub/machine/kind":
+        adhesive_binder: Adhesive Binder
+        binder: Binder
+        book_puncher: Book Puncher
+        box_maker: Box Maker
+        box_packer: Box Packer
+        case_maker: Case Maker
+        corner_rounder: Corner Rounder
+        ctp: CTP
+        cutter: Cutter
+        digital_press: Digital Press
+        drill: Drill
+        drill_puncher: Drill Puncher
+        eyeletter: Eyeletter
+        flexo_press: Flexo Press
+        folder: Folder
+        gatherer: Gatherer
+        inkjet_press: Inkjet Press
+        laminator: Laminator
+        letterpress_press: Letterpress Press
+        notcher: Notcher
+        offset_press: Offset Press
+        pad_press: Pad Press
+        perforator: Perforator
+        platesetter: Platesetter
+        shape_cutter: Shape Cutter
+        silkscreen_press: Silkscreen Press
+        spindle_drill: Spindle Drill
+        stitcher: Stitcher
+        thread_sewer: Thread Sewer
+        trimmer: Trimmer
+        web_digital_press: Web Digital Press
+        web_inkjet_press: Web Inkjet Press
+        web_offset_press: Web Offset Press
+        web_silkscreen_press: Web Silkscreen Press
       "zaikio/hub/specialist/capability":
         envelope_stuffing: Envelope stuffing
         counting: Counting
@@ -50,3 +85,7 @@ en:
         shrink_wrapping: Shrink wrapping
         addressing: Addressing
         franking: Franking
+      "zaikio/hub/specialist/kind":
+        other: Other
+        boxing: Boxing
+        shipping: Shipping
