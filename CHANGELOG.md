@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Improve german and english translations
+
 ## [0.15.2]
 
 - Add class method `kinds` to `Machine` and `Specialist`
