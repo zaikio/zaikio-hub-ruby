@@ -19,27 +19,27 @@ de:
         pre_cutting: Vorschneiden
         cutting: Schneiden
         intermediate_cutting: Zwischenschneiden
-        folding: Falten
+        folding: Falzen
         laminating: Laminieren
-        perfect_binding: Perfekte Bindung
-        hole_drilling: Löcher bohren
-        comb_binding: Kamm-Bindung
+        perfect_binding: Klebebinden
+        hole_drilling: Bohren
+        comb_binding: Kammbinden
         embossing: Prägen
         engraving: Gravieren
-        foil_stamping: Folie prägen
+        foil_stamping: Folienprägen
         gluing: Kleben
         head_banding: Kopfbinden
         perforating: Perforieren
         ring_binding: Ringbindung
-        saddle_stitching: Sattelnaht
-        spiral_binding: Spiralbindung
-        strip_binding: Streifenbindung
-        thread_sewing: Fadenheftung
-        envelope_stuffing: Umschlag füllen
-        counting: Zählen
+        saddle_stitching: Sammelheften
+        spiral_binding: Spiralbinden
+        strip_binding: Fälzeln
+        thread_sewing: Fadenheften
+        envelope_stuffing: Kuvertieren
+        counting: Abzählen
         wrapping: Verpacken
-        boxing: Paketverpacken
-        shrink_wrapping: Schrumpffolienverpackung
+        boxing: In Kartons verpacken
+        shrink_wrapping: Einschrumpfen
         addressing: Adressieren
         franking: Frankieren
       "zaikio/hub/machine/kind":
@@ -48,14 +48,14 @@ de:
         book_puncher: Buchhefter
         box_maker: Kartonagenbauer
         box_packer: Kartonagenpacker
-        case_maker: Faltschachtelbauer
+        case_maker: Deckenherstellungsmaschine
         corner_rounder: Eckenrundungsgerät
-        ctp: Computer-zu-Platte
+        ctp: Plattenbelichter
         cutter: Schneidemaschine
         digital_press: Digitaldruckmaschine
         drill: Bohrmaschine
         drill_puncher: Bohrhefter
-        eyeletter: Blickfang
+        eyeletter: Ösenmaschine
         flexo_press: Flexodruckmaschine
         folder: Falzmaschine
         gatherer: Sammelmaschine
@@ -70,18 +70,18 @@ de:
         shape_cutter: Formschneider
         silkscreen_press: Siebdruckmaschine
         spindle_drill: Spindeldrill
-        stitcher: Heftmaschine
+        stitcher: Sammelhefter
         thread_sewer: Fadenhefter
-        trimmer: Schneidemaschine
-        web_digital_press: Web Digitaldruckmaschine
-        web_inkjet_press: Web Tintenstrahldruckmaschine
-        web_offset_press: Web Offsetdruckmaschine
-        web_silkscreen_press: Web Siebdruckmaschine
+        trimmer: Dreimesserautomat
+        web_digital_press: Rollendigitaldruckmaschine 
+        web_inkjet_press: Rollentintenstrahldrucker
+        web_offset_press: Rollenoffsetmaschine
+        web_silkscreen_press: Rollensiebdruckmaschine
       "zaikio/hub/specialist/capability":
-        envelope_stuffing: Umschlag füllen
-        counting: Zählen
+        envelope_stuffing: Kuvertieren
+        counting: Abzählen
         wrapping: Verpacken
-        boxing: Paketverpacken
+        boxing: In Kartons verpacken
         shrink_wrapping: Schrumpffolienverpackung
         addressing: Adressieren
         franking: Frankieren

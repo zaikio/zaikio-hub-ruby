@@ -2,7 +2,7 @@ en:
   activemodel:
     attributes:
       "zaikio/hub/machine/capability":
-        ctp: CTP
+        ctp: Plate making
         digital_printing: Digital printing
         digital_web_printing: Digital web printing
         inkjet_printing: Inkjet printing
@@ -22,7 +22,7 @@ en:
         folding: Folding
         laminating: Laminating
         perfect_binding: Perfect binding
-        hole_drilling: Hole drilling
+        hole_drilling: Drilling
         comb_binding: Comb binding
         embossing: Embossing
         engraving: Engraving
@@ -33,12 +33,12 @@ en:
         ring_binding: Ring binding
         saddle_stitching: Saddle stitching
         spiral_binding: Spiral binding
-        strip_binding: Strip binding
+        strip_binding: Back-stripping
         thread_sewing: Thread sewing
-        envelope_stuffing: Envelope stuffing
+        envelope_stuffing: Inserting
         counting: Counting
-        wrapping: Wrapping
-        boxing: Boxing
+        wrapping: Packing
+        boxing: Box packing
         shrink_wrapping: Shrink wrapping
         addressing: Addressing
         franking: Franking
@@ -50,7 +50,7 @@ en:
         box_packer: Box Packer
         case_maker: Case Maker
         corner_rounder: Corner Rounder
-        ctp: CTP
+        ctp: Plate Setter
         cutter: Cutter
         digital_press: Digital Press
         drill: Drill
@@ -70,9 +70,9 @@ en:
         shape_cutter: Shape Cutter
         silkscreen_press: Silkscreen Press
         spindle_drill: Spindle Drill
-        stitcher: Stitcher
+        stitcher: Saddle Stitcher
         thread_sewer: Thread Sewer
-        trimmer: Trimmer
+        trimmer: Three Knife Trimmer
         web_digital_press: Web Digital Press
         web_inkjet_press: Web Inkjet Press
         web_offset_press: Web Offset Press
@@ -80,8 +80,8 @@ en:
       "zaikio/hub/specialist/capability":
         envelope_stuffing: Envelope stuffing
         counting: Counting
-        wrapping: Wrapping
-        boxing: Boxing
+        wrapping: Packing
+        boxing: Box packing 
         shrink_wrapping: Shrink wrapping
         addressing: Addressing
         franking: Franking
