@@ -447,4 +447,33 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         .human_attribute_name("kind.digital_press")
     end
   end
+
+  test "create single availability" do
+    WebMock.disable_net_connect!
+    machine_id = "f44b5c9c-2c58-4f31-a02f-632cce70320b"
+
+    stub_request(:post, "https://hub.zaikio.test/api/v1/machines/#{machine_id}/availabilities")
+      .with(body: { availability: {
+        mode: "available",
+        starts_at: 34_200,
+        ends_at: 63_000,
+        weekday: "monday",
+        capacity: 1
+      } }.to_json)
+      .to_return(status: 201, body: {
+        "id" => "e0815217-be2f-436e-915a-67bec7faf010"
+      }.to_json, headers: { "Content-Type" => "application/json" })
+
+    Zaikio::Hub.with_token(token) do
+      availability = Zaikio::Hub::Machine.new(id: machine_id).availabilities.create(
+        mode: "available",
+        starts_at: 34_200,
+        ends_at: 63_000,
+        weekday: "monday",
+        capacity: 1
+      )
+
+      assert_equal "e0815217-be2f-436e-915a-67bec7faf010", availability.id
+    end
+  end
 end
