@@ -8,7 +8,7 @@ module Zaikio
 
       # Attributes
       attributes :name, :updated_at, :created_at, :site_id, :kind, :capabilities,
-                 :manufacturer_id, :serial_number, :manufacturer, :owner_id
+                 :manufacturer_id, :serial_number, :manufacturer, :owner_id, :reference
 
       # Associations
       has_many :availabilities, class_name: "Zaikio::Hub::Availability",

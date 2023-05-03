@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Add `reference` attribute to `Machine` and `Specialist`
+
 ## [0.16.0]
 
 - Support `availabilities` for `Machine` and `Specialist`
