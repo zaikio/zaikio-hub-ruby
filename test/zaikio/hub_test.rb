@@ -458,7 +458,8 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         starts_at: 34_200,
         ends_at: 63_000,
         weekday: "monday",
-        capacity: 1
+        capacity: 1,
+        reference: "122334"
       } }.to_json)
       .to_return(status: 201, body: {
         "id" => "e0815217-be2f-436e-915a-67bec7faf010"
@@ -470,7 +471,8 @@ class Zaikio::Hub::Test < ActiveSupport::TestCase
         starts_at: 34_200,
         ends_at: 63_000,
         weekday: "monday",
-        capacity: 1
+        capacity: 1,
+        reference: "122334"
       )
 
       assert_equal "e0815217-be2f-436e-915a-67bec7faf010", availability.id
