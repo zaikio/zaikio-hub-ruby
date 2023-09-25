@@ -29,6 +29,7 @@ require "zaikio/hub/subscription"
 require "zaikio/hub/subscription_invitation"
 require "zaikio/hub/test_account"
 require "zaikio/hub/token_data"
+require "zaikio/hub/access_token"
 
 module Zaikio
   module Hub
