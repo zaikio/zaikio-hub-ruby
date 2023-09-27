@@ -36,7 +36,7 @@ module Zaikio
       # For vendors
       has_many :connections,             class_name: "Zaikio::Hub::Connection",
                                          uri: "connections(/:id)"
-      has_many :apps,                    class_name: "Zaikio::Hub::App",
+      has_many :apps,                    class_name: "Zaikio::Hub::VendorApp",
                                          uri: "apps(/:id)"
 
       def fetch
