@@ -6,7 +6,7 @@ module Zaikio
       include_root_in_json :access_token
 
       # Associations
-      has_one :app, class_name: "Zaikio::Hub::App"
+      has_one :app, class_name: "Zaikio::Hub::App", uri: nil
     end
   end
 end

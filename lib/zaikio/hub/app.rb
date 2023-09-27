@@ -7,7 +7,7 @@ module Zaikio
       attributes :name, :slug, :title, :logo_url
 
       # Associations
-      has_one :vendor, class_name: "Zaikio::Hub::Vendor"
+      has_one :vendor, class_name: "Zaikio::Hub::Vendor", uri: nil
     end
   end
 end
