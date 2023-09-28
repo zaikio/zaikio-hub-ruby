@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.19.0]
+
 - **BREAKING** Rename `Zaikio::Hub::App` to `Zaikio::Hub::VendorApp`
 - Add `Zaikio::Hub::App` for apps meta data arriving from the new access token endpoint
 - Add `Zaikio::Hub::Vendor`
@@ -151,7 +153,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added subscriptions (migration required)
 
-[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.17.0..HEAD
+[Unreleased]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.19.0..HEAD
+[0.19.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.18.0..v0.19.0
+[0.18.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.17.0..v0.18.0
 [0.17.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.16.0..v0.17.0
 [0.16.0]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.15.3..v0.16.0
 [0.15.3]: https://github.com/zaikio/zaikio-hub-ruby/compare/v0.15.2..v0.15.3
