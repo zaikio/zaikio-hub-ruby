@@ -1,12 +1,13 @@
 module Zaikio
   module Hub
     class App < Base
-      uri "apps(/:id)"
-
-      include_root_in_json :app
+      uri nil
 
       # Attributes
-      attributes :name, :category, :kind, :state, :configuration
+      attributes :name, :slug, :title, :logo_url
+
+      # Associations
+      has_one :vendor, class_name: "Zaikio::Hub::Vendor", uri: nil
     end
   end
 end

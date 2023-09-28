@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- **BREAKING** Rename `Zaikio::Hub::App` to `Zaikio::Hub::VendorApp`
+- Add `Zaikio::Hub::App` for apps meta data arriving from the new access token endpoint
+- Add `Zaikio::Hub::Vendor`
+- Add `Zaikio::Hub::AccessToken`
+
 ## [0.18.0]
 
 - Add `reference` attribute to `Availability`

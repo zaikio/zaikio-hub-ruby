@@ -8,6 +8,8 @@ require "zaikio/hub/basic_auth_middleware"
 # Models
 require "zaikio/hub/client"
 require "zaikio/hub/base"
+require "zaikio/hub/app"
+require "zaikio/hub/vendor"
 require "zaikio/hub/asset"
 require "zaikio/hub/organization_membership"
 require "zaikio/hub/business_relationship"
@@ -24,11 +26,12 @@ require "zaikio/hub/current_organization"
 require "zaikio/hub/role"
 require "zaikio/hub/revoked_access_token"
 require "zaikio/hub/connection"
-require "zaikio/hub/app"
 require "zaikio/hub/subscription"
 require "zaikio/hub/subscription_invitation"
 require "zaikio/hub/test_account"
 require "zaikio/hub/token_data"
+require "zaikio/hub/access_token"
+require "zaikio/hub/vendor_app"
 
 module Zaikio
   module Hub
